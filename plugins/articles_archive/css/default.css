@@ -1,0 +1,14 @@
+div#pXXX_archive { padding: 2px; }
+div#pXXX_archive div.year_container {
+  border-bottom: 1px solid #d0d0d0;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  margin-bottom: 8px;
+}
+div#pXXX_archive div.month_container { padding: 4px; padding-left: 8px; }
+div#pXXX_archive a.arc_year,
+div#pXXX_archive a.arc_month { font-weight: bold; font-size: 14px; }
+div#pXXX_archive a.arc_year span,
+div#pXXX_archive a.arc_month span { font-size: 10px; }
+div#pXXX_archive ul { font-size: 13px; list-style-type: none; }
+div#pXXX_archive ul li { font-size: 13px; padding: 2px; list-style: none; }

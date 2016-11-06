@@ -1,0 +1,237 @@
+div.article_container,
+div.article_review_container {
+  position: relative;
+  margin-bottom: 35px;
+}
+div.wrapper-social { float: right; height: 18px;
+  margin: 0; margin-right: 10px;
+  padding: 2px 0px 2px 0px; }
+div.wrapper-fb-gplus { float: left; margin: 1px 0 0 5px; width: 250px; }
+div.wrapper-read-more-comments { display: inline; position: relative; left:0; }
+
+div.article_head { display: block; height: 90px; }
+div.article_head_left { display: inline; float: left; }
+div.article_head_right { display: inline; }
+
+div.article_title {
+  color: #004990;
+  display: inline-block;
+}
+div.article_subtitle {
+  border-bottom: 1px solid #ccc;
+  clear: right;
+  color: #272727;
+  display: inline-block;
+  font-size: 13px;
+  margin: 0 8px 8px 0;
+  padding-bottom: 4px;
+}
+div.article_container div.article_subtitle { width: 100%; }
+div.article_review_container div.article_subtitle { width: 73%; }
+
+div.article_title h1,
+div.article_title h2 {
+  background-color: #000;
+  line-height: 30px; min-height: 30px; height: auto;
+  padding: 4px; margin-bottom: 0;
+}
+
+a.article_title_link {
+  background-color: #000;
+  color: #44b0eb;
+  clear: right;
+  font-size: 26px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  padding-bottom: 0px;
+  margin-bottom: 2px;
+}
+a.article_title_link:hover {
+  color: #67bcea;
+  background: transparent;
+  letter-spacing: 1px;
+  text-decoration:none;
+}
+h1.article_title_link {
+  background-color: #000;
+  color: #44b0eb;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+div.article_article,
+div.article_article p,
+div.article_description {
+  font-style: none;
+  font-weight: normal;
+  line-height: 20px;
+  margin: 0;
+  padding-top: 4px;
+}
+div.article_comments,
+div.article_read_more {
+  display: inline-block;
+  margin: 8px 4px 10px 4px;
+}
+div.article_description ul { clear: both; }
+div.article_review_container div.article_description {
+  clear: left;
+}
+div.article_read_more a {
+  color:#f5f5f5; font-size:12px;
+/*
+  border-radius:75px;
+  background:#0797D5;
+  color:#f5f5f5; font-size:12px;
+  padding:6px 14px 6px 14px;
+  text-decoration:none;
+*/
+}
+div.article_read_more a:hover { background:#11648b; }
+div.article_comments a { font-size:12px; text-decoration:none;}
+div.article_comments a:hover { text-decoration:underline;}
+
+div.article_rating {
+  float: left;
+  width: auto;/*275px;*/
+  min-width: 295px;
+  margin: 2px 0 0 0; }
+
+.article_tools { display: inline-block; float:left; margin: 0 !important; padding: 0 !important; height: 20px; list-style-type: none; }
+
+.article_tools li { display: inline-block; margin: 2px 0 0 0 !important; padding: 0 !important; vertical-align: top; }
+.article_tools li a { height: 16px; outline: none; }
+.article_tools li.social a { display: inline-block; margin: 0 !important; padding: 0 !important; margin-top: 2px; width: 16px; }
+.article_tools a:hover,
+.article_tools a:visited,
+.article_tools a:focus { outline: none; text-decoration: none; }
+.article_tools .gp-one { width:66px; height:30px; }
+.article_tools .delicious a { background-image:url(includes/images/social/delicious-16x16.png); }
+.article_tools .digg a { background-image:url(includes/images/social/digg-16x16.png); }
+.article_tools .email a { background-image:url(includes/images/social/email-16x16.png); }
+.article_tools .facebook a { background-image:url(includes/images/social/facebook-16x16.png); }
+.article_tools .twitter a { background-image:url(includes/images/social/twitter-16x16.png); }
+.article_tools .article_pdf_link a { background-image:url(plugins/p2_news/pdf.png); }
+.article_tools .article_print_link a { background-image:url(plugins/p2_news/printer.png); }
+.article_tools .article_comments_link a { margin-left: 4px; }
+
+div.article_footer {
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  clear: both;
+  display: block;
+  height: 36px;
+  margin: 4px 4px 12px 0px;
+  padding-left: 2px;
+  padding-top: 4px;
+  position: relative;
+  vertical-align: middle;
+  width: 99%;
+}
+
+div.article_footer_left {
+  margin:0px;
+  padding:4px;
+  display: inline;
+  float: left;
+  left: 0px;
+  top: 0px;
+  position: relative;
+  line-height: 10px;
+  height: 10px;
+  font-style: italic;
+}
+
+div.article_footer_right {
+  margin: 0;
+  padding: 4px;
+  display: inline;
+  float: right;
+  right: 0px;
+  top: 0px;
+  position: absolute;
+}
+
+iframe.facebook_iframe {
+  border: none;
+  display: inline;
+  float: right;
+  padding-top: 4px;
+  height: 30px;
+  position: absolute;
+  width: 235px;
+}
+.popup { text-align: left; }
+.popup #wrapper { margin: 0; padding: 0; width: 100%; }
+.popup #content { margin: 10px; padding: 10px; padding-right: 20px; width: 730px; }
+.popup .article_footer { display: none; }
+
+.article-image {
+  background-color: transparent;
+  border: 1px solid #000;
+  clear: left;
+  display: block;
+  float: left;
+  height: 100px;
+  overflow: hidden;
+  margin: 0 10px 10px 4px;
+  padding: 0;
+  width: 170px;
+}
+.article-image img {
+  border: none;
+  margin: 0; padding: 0;
+  height: 100px;
+  width: 170px;
+}
+.article-rating-value {
+  /*background: url(images/rating-bg.jpg) no-repeat;*/
+  border: 1px solid #000;
+  display: inline;
+  float: left;
+  height: 100px;
+  margin: 0;
+  margin-left: -11px;
+  margin-right: 10px;
+  padding: 0;
+  width: 81px;
+}
+.article-rating-value div {
+  width: 81px;
+  height: 40px;
+  color: #ff0000;
+  font-size: 36px;
+  padding-top: 44px;
+  text-align: center;
+}
+div#p2_container .pagination * { font-size: 14px !important; }
+/* SD343 */
+div#p2_tag_head { display: block; clear: both; }
+div#p2_tag_head p {
+  color: #000;
+  font: bold 18px Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif !important;
+  letter-spacing: 1px;
+  text-decoration: none; }
+
+/* SD360 */
+div.articles-attachments {
+  border: 0;
+  font-size:11px;
+  margin: 8px 0 0 0;
+  padding: 4px;
+  vertical-align:middle; }
+div.articles-attachments ul  {
+  padding: 4px !important;
+  list-style: none inside !important;
+  margin: 2px; }
+div.articles-attachments p { padding: 2px !important; margin: 0; }
+div.articles-attachments ul li {
+  height: 16px;
+  list-style-image: url(includes/images/download.png) !important;
+  margin:0; padding: 0 2px 4px 2px; }
+div.articles-attachments ul li a{
+  color:#000;
+  font-size: 13px; padding-right: 4px; }
+div.articles-attachments a.imgdelete {
+  background: transparent url(includes/images/eraser.png) no-repeat 2px center;
+  padding: 1px 1px 1px 20px;
+  margin: 0 2px 0 2px; }

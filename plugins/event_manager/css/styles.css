@@ -1,0 +1,14 @@
+form#pXXXX_form td.tdem1 { padding: 2px; width: 150px; }
+form#pXXXX_form td.tdem2 { padding: 2px 5px 2px 10px; }
+table#pXXXX_events th { padding: 3px 4px 8px 4px; }
+table#pXXXX_events th a { font-weight: bold; }
+table#pXXXX_events td { padding: 4px; }
+table#pXXXX_events .rowcol1 { background-color: #fff; }
+table#pXXXX_events .rowcol2 { background-color: #e5e5e5; }
+table#pXXXX_events .rowcol3 { background-color: #ccc; }
+table.event_details td { padding: 4px; }
+table.event_details td.event_title { background-color: #fff; font-size: 14px; font-weight: bold; }
+table.event_details .rowcol1 { background-color: #fff; }
+table.event_details .rowcol2 { background-color: #e5e5e5; }
+table.event_details .rowcol3 { background-color: #ccc; }
+table.event_details td:first-child { max-width: 100px; }

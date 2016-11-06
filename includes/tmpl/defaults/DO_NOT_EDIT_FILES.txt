@@ -1,0 +1,5 @@
+***** DO NOT EDIT FILES IN THE "defaults" FOLDER!!! *****
+***** THESE FILES ARE OVERWRITTEN WITH SD UPGRADES! *****
+
+To create a custom template, copy e.g. "articles.tpl" to the "tmpl" folder
+and only edit files in that folder!!!

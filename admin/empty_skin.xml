@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+<name>Empty Skin</name>
+<author_name></author_name>
+<author_link></author_link>
+<folder_name></folder_name>
+<doctype><![CDATA[
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+]]></doctype>
+<starting_html_tag><![CDATA[
+<html>
+]]></starting_html_tag>
+<starting_body_tag><![CDATA[
+<body>
+]]></starting_body_tag>
+<head_include><![CDATA[
+
+]]></head_include>
+<css></css>
+<prgm_css><![CDATA[
+/* Basic System Styling */
+div #error_message {
+	background: #ffeaef;
+	border: 3px solid #ff829f;
+	left: 55px;
+	margin-bottom: 15px;
+	padding: 15px; }
+ 
+div #success_message {
+	background: #eaf4ff;
+	border: 3px solid #82c0ff;
+	left: 55px;
+	margin-bottom: 15px;
+	padding: 15px; }
+ 
+/* Pagination */
+div.pagination {
+	font-family: Georgia, Times, serif;
+	font-style: italic;
+	padding: 0px;
+	margin: 0px;
+	line-height: 40px;
+	text-align: left;
+	height: 40px; }
+ 
+	div.pagination a {
+		padding: 2px 5px 2px 5px;
+		margin: 2px;
+		text-decoration: none;
+		color: #44B0EB; }
+ 
+		div.pagination a:hover {
+			color: #44e5eb; }
+ 
+	div.pagination span.current {
+		padding: 2px 5px 2px 5px;
+		margin: 2px;
+		font-weight: bold;
+		background-color: #44B0EB;
+		color: #ffffff; }
+ 
+	div.pagination span.disabled {
+		padding: 2px 5px 2px 5px;
+		margin: 2px;
+		color: #dddddd; }
+ 
+/* Hover Menu */
+.sf-menu ul {
+	position: absolute;
+	top: -999em;
+	width: 10em; /* left offset of submenus need to match (see below) */ }
+ 
+	.sf-menu ul li { width: 100%; }
+ 
+	.sf-menu li:hover { visibility: inherit; /* fixes IE7 'sticky bug' */ }
+ 
+	.sf-menu li { position: relative; }
+ 
+	.sf-menu a {
+		display: block;
+		padding-left: 20px;
+		padding-right: 20px; }
+ 
+	.sf-menu li:hover ul, .sf-menu li.sfHover ul {
+		left: 0;
+		background: #ffffff;
+		top: 24px; /* match top ul list item height */
+		z-index: 99; }
+ 
+	.sf-menu li:hover li ul, .sf-menu li.sfHover li ul, .sf-menu li li:hover li ul, .sf-menu li li.sfHover li ul { top: -999em; }
+ 
+	.sf-menu li li:hover ul, .sf-menu li li.sfHover ul, .sf-menu li li li:hover ul, .sf-menu li li li.sfHover ul {
+		left: 10em; /* match ul width */
+		top: 0; }
+ 
+/* Articles Plugin */
+div.article_title {
+	background: transparent;
+	color: #272727;
+	font-family: Georgia, Times, serif;
+	font-size: 38px;
+	line-height: 1;
+	padding-bottom: 15px; }
+ 
+a.article_title_link {
+	background: transparent;
+	color: #272727;
+	font-family: Georgia, Times, serif;
+	font-size: 38px;
+	line-height: 1;
+	font-style: normal;
+	text-decoration: none; }
+ 
+	a.article_title_link:hover { 
+		background: transparent;
+		color: #44b0eb; }
+ 
+div.article_footer {
+	position: relative;
+	width: 100%;
+	height: 50px; }
+ 
+div.article_footer_left {
+	position: absolute;
+	width: auto;
+	height: 50px;
+	font-family: Georgia, Times, serif;
+	font-size: 12px;
+	font-style: italic; }
+ 
+div.article_footer_right {
+	position: absolute;
+	width: auto;
+	height: 50px;
+	right: 0px;
+	text-align: right;
+	float: right;
+	font-family: Georgia, Times, serif;
+	font-size: 12px;
+	font-style: italic; }
+ 
+	div.article_footer_right a { margin: 0 5px; }
+
+/* Image Gallery Plugin */
+
+#image_gallery_image img
+{
+  border: 1px solid #eee;
+  padding: 2px;
+}
+
+#image_gallery_sections img
+{
+  border: 1px solid #eee;
+  padding: 2px;
+}
+
+#image_gallery_thumbnails img
+{
+  border: 1px solid #eee;
+  padding: 2px;
+}
+]]></prgm_css>
+<header><![CDATA[
+[LOGO]
+<br /><br />
+[NAVIGATION]
+]]></header>
+<layout><![CDATA[
+<plugin>
+  <plugin_name>[PLUGIN_NAME]</plugin_name>
+  [PLUGIN]
+</plugin>
+]]></layout>
+<footer></footer>
+</theme>

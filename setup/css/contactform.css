@@ -1,0 +1,59 @@
+/* Hides the whole contact form until needed */
+#contactForm {
+  max-width: 500px;
+  border:0;
+  padding:2px 2px;
+  display:block;
+}
+
+/* Loading bar */
+.bar {
+  display:none;
+  background:url(../images/ajax-loader.gif) no-repeat center;
+  margin-top:50px;
+  height:40px; width:230px;
+}
+
+/* Hides the confirmation message until needed */
+#messageSent { display:none; }
+
+/* This hides the form validation alert messages until needed */
+#contactForm span {
+  background-color: #fff;
+  display:none;
+  font-size:12px;
+  line-height:10px;
+  padding-left:6px;
+  padding-bottom:2px;
+  color:#800000;
+}
+
+/* Form styling from here on out. There is nothing in here that you HAVE to use to get this to work */
+#contactForm textarea, #contactForm input {
+  width: 80%;
+  font-family: Arial, Geneva, sans-serif;
+  /* background:#6d6d6d url(../images/contact_input.png) repeat-x top; */
+  border:1px solid #8a8a8a;
+  height:15px;
+  line-height:14px;
+  font-size:12px;
+  padding:2px 2px 0px;
+  }
+#contactForm input { height: 20px; line-height:15px; font-size: 13px; margin: 1px; padding: 2px; }
+#contactForm textarea { height:114px; font-family: Arial, Geneva, sans-serif; }
+#contactForm .submit {
+  border:1px solid #aba8a8;
+  background:#e5e5e5;
+  text-transform:uppercase;
+  color:#4d4d4d;
+  font-weight:bold;
+  padding:7px 16px 7px 14px;
+  height:37px; width:130px;
+  cursor:pointer;
+  margin-top:10px;
+  }
+#contactForm .submit:active { background: #cacaca; color:#4d4d4d; }
+#contactForm label { padding-left: 4px; font-weight: bold; }
+#contactForm p { padding-bottom: 4px; }
+
+input.p6_error { background-color: #FFC0C0; color: #000; }

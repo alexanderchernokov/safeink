@@ -1,0 +1,36 @@
+body
+{
+  font:  12px "Verdana", "Tahoma", Arial, Helvetica, sans-serif;
+  color: #5C5C5C;
+}
+
+a:link              { font: 11px verdana; color: #778AAF; text-decoration: underline; }
+a:active            { font: 11px verdana; color: #778AAF; text-decoration: underline; }
+a:visited           { font: 11px verdana; color: #778AAF; text-decoration: underline; }
+a:hover             { font: 11px verdana; color: #526384; text-decoration: underline; }
+
+a.copyright:link    { font: 11px verdana; color: #778AAF; text-decoration: none; }
+a.copyright:active  { font: 11px verdana; color: #778AAF; text-decoration: none; }
+a.copyright:visited { font: 11px verdana; color: #778AAF; text-decoration: none; }
+a.copyright:hover   { font: 11px verdana; color: #526384; text-decoration: none; }
+
+a.category:link     { font: 12px arial;   color: #FFFFFF; text-decoration: none; font-weight:bold; }
+a.category:active   { font: 12px arial;   color: #FFFFFF; text-decoration: none; font-weight:bold; }
+a.category:visited  { font: 12px arial;   color: #FFFFFF; text-decoration: none; font-weight:bold; }
+a.category:hover    { font: 12px arial;   color: #D4DAE8; text-decoration: none; font-weight:bold; }
+
+
+img { border: 0; }
+
+select, option, textarea, input
+{
+  color:       #000000;
+  font-size:   11px;
+  font-family: "Verdana", "Tahoma", Arial, Helvetica, sans-serif;
+}
+
+td, font
+{
+  font:  11px "Verdana", "Tahoma", Arial, Helvetica, sans-serif;
+}
+

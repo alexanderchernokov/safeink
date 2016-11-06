@@ -1,0 +1,12 @@
+#pXXX_latestimages { display: block; width: auto; width: 200px; margin: 4px !important;padding:0 !important;}
+#pXXX_latestimages ul,
+#pXXX_latestimages li { list-style: none !important; list-style-type: none !important;
+  margin:0 !important; padding:0 !important; }
+#pXXX_latestimages .image-row { clear: both; display: block; padding-right: 4px; }
+#pXXX_latestimages .image { display: inline; float: left; padding: 4px; }
+#pXXX_latestimages .image li { display: inline; padding: 4px; }
+#pXXX_latestimages li.title { padding: 4px; }
+#pXXX_latestimages li.date  { clear: both; display: block; padding: 2px; }
+#pXXX_latestimages li.thumb { clear: both; display: block; padding: 2px; }
+#pXXX_latestimages li.author { clear: both; display: block; padding: 2px; }
+#pXXX_latestimages span.author { padding: 2px; }

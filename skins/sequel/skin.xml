@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+<name>Sequel</name>
+<author_name>indiqo.media</author_name>
+<author_link>http://indiqo.eu/</author_link>
+<folder_name>sequel</folder_name>
+<header><![CDATA[
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  [CMS_HEAD_INCLUDE]
+</head>
+<body>
+<div id="wrapper">
+
+	<!-- Header, Logo and Advertisement Space -->
+	<div id="header">
+		<div id="logo">[LOGO]</div>
+
+	</div>
+
+	<!-- Navigation -->
+	<div id="navigation">
+		[NAVIGATION]
+	</div>
+]]></header>
+<footer><![CDATA[
+</div>
+
+<!-- Copyright and Footer -->
+<div id="footer">
+	<b>Copyright 2013 Websites Name. All Rights Reserved.</b><br />
+	[COPYRIGHT] &amp; Sequel Theme Designed by <a href="http://indiqo.eu" title="indiqo.media - beautiful web solutions">indiqo.media</a>
+</div>
+</body>
+</html>
+]]></footer>
+<error_page><![CDATA[
+<html>
+<head>
+  [CMS_HEAD_INCLUDE]
+</head>
+<body>
+<div id="error_page">
+	<h1>[ERROR_PAGE_MESSAGE_TITLE]</h1>
+	<p>[ERROR_PAGE_MESSAGE]</p>
+</div>
+</body>
+</html>
+]]></error_page>
+<layout design_name=""><![CDATA[
+[HEADER]
+<!-- Main Content -->
+	<div id="content">
+
+		<!-- Left Column Start -->
+		<div id="left_column">
+			<plugin>
+			<div class="plugin">
+				<plugin_name><h3>[PLUGIN_NAME]</h3></plugin_name>
+				[PLUGIN]
+			</div>
+			</plugin>
+
+			<plugin>
+			<div class="plugin">
+				<plugin_name><h3>[PLUGIN_NAME]</h3></plugin_name>
+				[PLUGIN]
+			</div>
+			</plugin>
+
+			<plugin>
+			<div class="plugin">
+				<plugin_name><h3>[PLUGIN_NAME]</h3></plugin_name>
+				[PLUGIN]
+			</div>
+			</plugin>
+
+			<plugin>
+			<div class="plugin">
+				<plugin_name><h3>[PLUGIN_NAME]</h3></plugin_name>
+				[PLUGIN]
+			</div>
+			</plugin>
+
+			<plugin>
+			<div class="plugin">
+				<plugin_name><h3>[PLUGIN_NAME]</h3></plugin_name>
+				[PLUGIN]
+			</div>
+			</plugin>
+		</div>
+		<!-- Left Column End -->
+
+		<!-- Right Column Start -->
+		<div id="right_column">
+			<plugin>
+			<div class="plugin">
+				<plugin_name><h3>[PLUGIN_NAME]</h3></plugin_name>
+				[PLUGIN]
+			</div>
+			</plugin>
+
+			<plugin>
+			<div class="plugin">
+				<plugin_name><h3>[PLUGIN_NAME]</h3></plugin_name>
+				[PLUGIN]
+			</div>
+			</plugin>
+
+			<plugin>
+			<div class="plugin">
+				<plugin_name><h3>[PLUGIN_NAME]</h3></plugin_name>
+				[PLUGIN]
+			</div>
+			</plugin>
+
+			<plugin>
+			<div class="plugin">
+				<plugin_name><h3>[PLUGIN_NAME]</h3></plugin_name>
+				[PLUGIN]
+			</div>
+			</plugin>
+
+			<plugin>
+			<div class="plugin" id="last">
+				<plugin_name><h3>[PLUGIN_NAME]</h3></plugin_name>
+				[PLUGIN]
+			</div>
+			</plugin>
+		</div>
+		<!-- Right Column End -->
+
+		<div class="clear"></div>
+	</div>
+
+[FOOTER]
+]]></layout>
+<layout design_name=""><![CDATA[
+[HEADER]
+
+<!-- Main Content -->
+	<div id="content">
+
+		<!-- Left Column Start -->
+		<div id="left_column" class="full">
+			<plugin>
+			<div class="plugin">
+				<plugin_name><h3>[PLUGIN_NAME]</h3></plugin_name>
+				[PLUGIN]
+			</div>
+			</plugin>
+
+			<plugin>
+			<div class="plugin">
+				<plugin_name><h3>[PLUGIN_NAME]</h3></plugin_name>
+				[PLUGIN]
+			</div>
+			</plugin>
+
+			<plugin>
+			<div class="plugin">
+				<plugin_name><h3>[PLUGIN_NAME]</h3></plugin_name>
+				[PLUGIN]
+			</div>
+			</plugin>
+
+			<plugin>
+			<div class="plugin">
+				<plugin_name><h3>[PLUGIN_NAME]</h3></plugin_name>
+				[PLUGIN]
+			</div>
+			</plugin>
+
+			<plugin>
+			<div class="plugin">
+				<plugin_name><h3>[PLUGIN_NAME]</h3></plugin_name>
+				[PLUGIN]
+			</div>
+			</plugin>
+		</div>
+		<!-- Left Column End -->
+
+		<div class="clear"></div>
+	</div>
+
+[FOOTER]
+]]></layout>
+<css var_name="skin-css" plugin_id="0"><![CDATA[
+/* CSS Reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,s,samp,strike,sub,sup,tt,var,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+}
+
+/* Basic Styling */
+a:link, a:active, a:visited, a:hover {
+	background: transparent;
+	color: #44b0eb;
+	font-family: Georgia, Times, serif;
+	font-style: italic;
+	text-decoration: none; }
+
+a:active {
+	background: transparent;
+	color: #258bc2; }
+
+a:visited {
+	background: transparent;
+	color: #44b0eb; }
+
+a:hover { color: #44e5eb; }
+
+body,html {
+	background: #e8eff3;
+	color: #272727;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	margin: 0;
+	padding: 0;
+	text-align: center; }
+
+div {
+	text-align: left;
+	vertical-align: top; }
+
+.clear {
+	clear: both;
+	font-size: 0; }
+
+hr {
+	background: #fff;
+	border-top: 1px dotted #98a9b3;
+	border: 0; }
+
+p { padding: 13px 0; }
+
+big { font-size: 18px; }
+
+cite { text-decoration: line-through; }
+
+i,em { font-style:italic; }
+
+ul,ol { padding: 9px 0; }
+
+ul li {
+	font-family: Georgia, Times, serif;
+	font-style: italic;
+	height: auto; /* 24px; */
+	line-height: auto; /* 24px; */
+	list-style-type: square; }
+
+ol li {
+	font-family: Georgia, Times, serif;
+	font-style: italic;
+	list-style-position: inside;
+	list-style-type: lower-alpha; }
+
+small {
+	font-family: Georgia, Times, serif;
+	font-size: 12px;
+	font-style: italic; }
+
+textarea,input {
+	background: #fff;
+	border: 1px solid #ced5d9;
+	color: #272727;
+	font-size: 14px;
+	margin: 3px 0;
+	padding: 2px; }
+
+select,option {
+	background: transparent;
+	color: #000; }
+
+h1 {
+	background: transparent;
+	color: #272727;
+	font-family: Georgia, Times, serif;
+	font-size: 38px;
+	line-height: 1;
+	padding-bottom: 15px; }
+
+	h1 i {
+		background: transparent;
+		color: #44b0eb;
+		font-style: italic; }
+
+h2 {
+	background: #272727;
+	color: #fff;
+	display: table;
+	font-family: Georgia, Times, serif;
+	font-size: 22px;
+	font-style: italic;
+	line-height: 34px;
+	margin: 0 0 2px -6px;
+	padding: 0px 6px; }
+
+h3 {
+	background: transparent;
+	color: #272727;
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	line-height: 1;
+	padding-bottom: 8px;
+	text-transform: uppercase; }
+
+.btn {
+  display: inline-block;
+  padding: 4px 10px 4px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333333;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+  background-color: #fafafa;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), color-stop(25%, #ffffff), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+  background-image: -moz-linear-gradient(top, #ffffff, #ffffff 25%, #e6e6e6);
+  background-image: -ms-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+  background-image: -o-linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+  background-image: linear-gradient(#ffffff, #ffffff 25%, #e6e6e6);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+  border: 1px solid #ccc;
+  border-bottom-color: #bbb;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  *margin-left: .3em;
+}
+
+/* Content Wrapper */
+#wrapper {
+	background: #fff;
+	border-top: 2px solid #272727;
+	margin: 20px auto 0;
+	width: 960px; }
+
+/* Header incl. Logo and Advertisement Space */
+#header {
+	border-bottom: 1px dotted #98a9b3;
+	height: 100px;
+	position: relative; }
+
+	#header div#logo {
+		background: #272727;
+		color: #fff;
+		display: table;
+		font-size: 24px;
+		left: 50px;
+		letter-spacing: 1px;
+		line-height: 24px;
+		padding: 40px 70px 15px 19px;
+		position: absolute;
+		top: 0px;
+		width: auto; }
+
+	#header div#ad {
+		background: #e8eff3;
+		height: 60px;
+		position: absolute;
+		right: 50px;
+		top: 19px;
+		width: 468px; }
+
+/* Navigation */
+#navigation {
+	border-bottom: 2px solid #e8eff3;
+	border-top: 2px solid #e8eff3;
+	height: 22px;
+	padding: 12px 50px; }
+
+	#navigation ul li {
+		float: left;
+		font-family: Georgia, Times, serif;
+		font-size: 13px;
+		font-style: italic;
+		list-style: none;
+		margin-right: 2px;
+		width: auto; }
+
+	#navigation ul li ul li {
+		background: #272727;
+		border-top: 1px solid #ffffff; }
+
+		#navigation ul li ul li ul li {
+			border-bottom: 1px solid #ffffff;
+			border-left: 1px solid #ffffff;
+			border-top: 0px; }
+
+	#navigation ul { padding: 0; }
+
+		#navigation ul li a, #navigation ul li a.current {
+			padding-top: 5px;
+			padding-bottom: 5px;
+			height: 13px;
+			line-height: 13px;
+			background: transparent;
+			color: #272727; }
+
+		#navigation ul li a.current { color: #258bc2; }
+
+		#navigation ul li.current, #navigation ul li:hover { background: #44b0eb; }
+
+		#navigation ul li.current a, #navigation ul li.current a:hover, #navigation ul li:hover a, #navigation ul li:hover a:hover {
+			background: transparent;
+			color: #fff; }
+
+/* Main Content  */
+#content { border-top: 1px dotted #98a9b3; }
+
+/* Left Column */
+#left_column {
+	float: left;
+	padding: 15px 0 25px;
+	width: 660px; }
+
+	#left_column ul li { list-style-position: inside; }
+
+	#left_column div.plugin { padding: 15px 50px; }
+
+	#left_column small.left {
+		float: left;
+		width: auto; }
+
+	#left_column div.right {
+		float: right;
+		font-family: Georgia, Times, serif;
+		font-size: 12px;
+		font-style: italic;
+		width: auto; }
+
+		#left_column div.right a { margin: 0 5px; }
+
+/* Right Column */
+#right_column {
+	float: right;
+	padding-top: 10px;
+	width: 290px; }
+
+	#right_column div.plugin {
+		border-bottom: 1px solid #ced5d9;
+		padding: 33px 50px 20px 0; }
+
+	#right_column div.plugin#last { border-bottom: none; }
+
+	#right_column ul li { list-style: none; }
+
+/* Copyright and Footer  */
+#footer {
+	color: #98a9b3;
+	font-family: Georgia, Times, serif;
+	font-size: 12px;
+	font-style: italic;
+	line-height: 16px;
+	padding: 20px;
+	text-align: center; }
+
+	#footer b {
+		color: #6c7880;
+		font-weight: 400; }
+
+	#footer a:hover { color: #6c7880; }
+
+/* Miscellaneous */
+#navigation ul li a:hover, #footer a {
+	background: transparent;
+	color: #44b0eb; }
+
+/* Alternative Design Styling */
+div#left_column.full { width: 100%; }
+
+#error_page {
+	background: #ffffff;
+	width: 300px;
+	padding: 20px 30px;
+	position: absolute;
+	top: 120px;
+	left: 50%;
+	margin-left: -180px; }
+
+#error_page p { padding: 5px 0; }
+
+#error_page h1 {
+	background: transparent;
+	color: #44b0eb;
+	font-family: Georgia, Times, serif;
+	font-size: 28px;
+	line-height: 1;
+	padding-top: 5px; }
+
+div.sd_vvc { padding: 4px; }
+]]></css>
+</theme>

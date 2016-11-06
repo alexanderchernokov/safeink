@@ -1,0 +1,186 @@
+div#comments {
+  background-color: #fff;
+  padding: 4px;
+  margin-top: 4px;
+  width: 99%;
+}
+div#comments .comment_editor_header {
+  padding-left: 4px;
+  font-weight: bold;
+}
+div#comments .comments-title {
+  font-size: 15pt;
+  text-shadow: 1px 1px 0 #DDDDDD;
+  text-transform: none;
+  padding: 2px;
+  margin: 8px 0 8px 0;
+}
+div#comments p.comment-text {
+  background:url(includes/images/bg_comments3.gif) no-repeat 0 100%;
+  color: #000;
+  margin: 0 0 8px 0;
+  min-height:48px;
+  padding: 0 8px 18px 8px;
+  width: 510px;
+}
+div#comments ol {
+  padding: 0;
+  margin: 8px 0 0 0;
+}
+div#comments ol li {
+  list-style:none outside none;
+  background-color:#fff;
+  border-bottom:1px solid #CFCFCF;
+  font-style: normal;
+  height:auto !important;
+  margin: 4px 0;
+  min-height:60px;
+  padding: 0;
+  overflow:hidden;
+  width: 600px;
+}
+div#comments ol li div.comment {
+  padding: 4px;
+  min-height: 60px;
+  width: 99%; }
+  
+div#comments .meta {
+  padding-bottom:32px;
+  background:url(includes/images/bg_comments1.gif) no-repeat 0 100%;
+  width: 550px;
+  }  
+div#comments .meta li{
+  background-color: transparent;
+  border: none;
+	margin:0;
+	display:inline;
+	font-size:12px;
+	color:#777;
+	position:static;
+  padding: 2px;
+	}	
+div#comments .meta .author{
+	font-size:14px;
+	font-weight:bold;
+	}	
+  
+div#comments ol li div.comment-admin {
+  float: right;
+  display: inline-block; 
+  padding: 2px;
+  margin: 1px 8px 1px 2px;
+  height: 20px;
+  vertical-align: top;
+}
+div#comments ol li span.admin-hint {
+  display: none;
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 11px;
+}
+div#comments ol li div.comment-admin:hover {
+  background-color: #FFC0C0;
+}
+div#comments ol li div.comment-admin:hover span {
+  display: inline-block;
+}
+div#comments ol li img.avatar {
+  background-color: #fff;
+  padding: 3px;
+  border: 1px solid #eee;
+}
+div#comments ol li div.avatar-column {
+  background-color: #fff;
+  float: left;
+  width: auto;
+  height: auto;
+}
+div#comments ol li div.message-column {
+  background-color: #fff;
+  margin-left: 60px;
+  width: auto;
+}
+div#comments ol li p {
+  padding: 2px;
+  margin-top: 4px;
+}
+div#comments ol li span {
+  line-height: 20px;
+  margin-bottom: 10px;
+  padding: 0;
+}
+div#comments ol li span.date {
+  color: #666;
+}
+div#comments ol li span.username,
+div.comment_username {
+  font-weight: bold;
+  padding: 4px; 
+}
+form#comment-form {
+  background-color:#F9F9F9;
+  border: 1px solid #CFCFCF;
+  clear: both;
+  margin: 0;
+  overflow: hidden;
+  padding: 4px;
+}
+form#comment-form markItUpComment_comment { width: 100%; min-height: 250px; padding: 0; }
+form#comment-form div.markItUpContainer { width: 98%; min-height: 200px; padding: 4px; }
+#comment_comment {
+  font: 14px 'Lucida Console', Courier, monospace;
+  padding: 0px;
+  margin: 0px;
+  border:1px solid #3C769D;
+  height: 166px;
+  position: relative;
+  left: 4px;
+  line-height:17px;
+  overflow: scroll;
+  width: 98%;
+  z-index: 1;
+}
+form#comment-form input {
+  border: 1px solid #CFCFCF;
+  padding: 4px;
+  display: block;
+  width: 300px;
+  margin-bottom: 10px;
+  margin-left: 4px;
+}
+form#comment-form input[type="submit"] {
+  background-color:#58B9EB;
+  border:1px solid #40A2D4;
+  color:#FFFFFF;
+  cursor:pointer;
+  font-family: Helvetica,Arial,sans-serif;
+  font-size:14px;
+  font-weight:bold;
+  padding:4px;
+  margin-top:5px;
+  width: 150px;
+  border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px;
+}
+form#comment-form input[type="submit"]:hover {
+  background-color:#80cdf5;
+  border-color:#52b1e2;
+}
+a.comment-edit {
+  background: transparent url("includes/images/edit.png") no-repeat scroll top center;
+  display: inline-block;
+  font-size: 12px;
+  height: 18px;
+  padding: 1px 1px 1px 22px !important;
+  margin: 0 2px 0 2px !important;
+  white-space: nowrap;
+  width: auto !important;
+}
+a.comment-delete {
+  background: transparent url("includes/images/eraser.png") no-repeat scroll top center;
+  display: inline-block;
+  font-size: 12px;
+  height: 18px;
+  padding: 1px 1px 1px 22px !important;
+  margin: 0 2px 0 2px !important;
+  white-space: nowrap;
+  width: auto !important;
+}

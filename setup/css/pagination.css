@@ -1,0 +1,35 @@
+div.pagination {
+  font-family: Helvetica, Times, serif;
+  font-style: italic;
+  font-size: 12px;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  line-height: 40px;
+  text-align: left;
+  height: 40px;
+  white-space:nowrap;
+  }
+
+  div.pagination a {
+    padding: 2px 4px 2px 4px;
+    margin: 1px;
+    text-decoration: none;
+    color: #44B0EB; }
+
+  div.pagination a:hover {
+    background-color: #44e5eb;
+    color: #fff; }
+
+  div.pagination span.current {
+    padding: 2px 4px 2px 4px;
+    margin: 1px;
+    font-weight: bold;
+    background-color: #44B0EB;
+    color: #fff; }
+
+  div.pagination span.disabled {
+    display: none;
+    padding: 2px 4px 2px 4px;
+    margin: 1px;
+    color: #ddd; }

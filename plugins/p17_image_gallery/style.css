@@ -1,0 +1,17 @@
+#image_gallery_image img
+{
+  border: 1px solid #eee;
+  padding: 2px;
+}
+
+#image_gallery_sections img
+{
+  border: 1px solid #eee;
+  padding: 2px;
+}
+
+#image_gallery_thumbnails img
+{
+  border: 1px solid #eee;
+  padding: 2px;
+}

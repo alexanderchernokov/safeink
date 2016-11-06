@@ -1,0 +1,66 @@
+.mega-menu ul, .mega-menu ul li {list-style: none;}
+.mega-menu ul {position: relative; padding: 0; margin: 0; }
+.mega-menu ul li ul {display: none;}
+.mega-menu .sub {display: none;}
+.mega-menu .sub ul {display: block;}
+
+.black {font: normal 13px Arial, Helvetica, sans-serif; line-height: 16px;}
+.black ul.mega-menu, .black ul.mega-menu, .black ul.mega-menu li {margin: 0; padding: 0; border: none;  z-index: 99;}
+.black ul.mega-menu {background-color: #313131; width: 100%; height: 40px; border-right: 1px solid #fff; border-left: 1px solid #1B1B1B; position: relative;}
+.black ul.mega-menu li {float: left; margin: 0; padding: 0; font: normal 13px Arial, Helvetica, sans-serif; font-weight: bold;}
+.black ul.mega-menu li a {font-size: 13px; float: left; display: block; color: #fff; padding: 12px 20px 12px 15px; background-color: #313131; border-right: 1px solid #fff; text-shadow: 1px 1px 1px #222; text-decoration: none;}
+.black ul.mega-menu li a.dc-mega {position: relative; padding-right: 25px; }
+.black ul.mega-menu li a.dc-mega img {margin-right: 6px;}
+.black ul.mega-menu li a .dc-mega-icon {display: block; position: absolute; top: 18px; right: 10px; width: 8px; height: 6px; background: url(menuskins/images/arrow.png) no-repeat 0 0;}
+.black ul.mega-menu li.mega-hover a,
+.black ul.mega-menu li a:hover {background-position: 100% -40px; color: #fff; background-color: #00bfec; text-shadow: none;}
+.black ul.mega-menu li.mega-hover a .dc-mega-icon {background-position: 0 100%;}
+.black ul.mega-menu li .sub-container { position: absolute; background-color: #313131; margin-left: 0px;
+  box-shadow:#333 2px 2px 5px; -moz-box-shadow:#333 2px 2px 5px; -webkit-box-shadow:#333 2px 2px 5px; }
+.black ul.mega-menu li .sub { color: #000; background-color: #fff; border: none; padding: 0;}
+.black ul.mega-menu li .sub-container.mega { border: none; }
+.black ul.mega-menu li .sub-container.mega .sub {padding: 4px 0 0 8px;}
+.black ul.mega-menu li .sub .row {width: 100%; padding: 0px; margin: 0px; overflow: hidden; clear: both;}
+.black ul.mega-menu li .sub li {list-style: none; float: none; width: 170px; font-size: 13px; font-weight: normal;}
+.black ul.mega-menu li .sub li.mega-hdr {margin: 4px 8px 4px 0; float: left;}
+.black ul.mega-menu li .sub li.mega-hdr.last {margin-right: 0;}
+.black ul.mega-menu li .sub a {font-size: 13px; background: none; border: none; text-shadow: none; color: #111; display: block; float: none; text-decoration: none; }
+.black ul.mega-menu li .sub li.mega-hdr a.mega-hdr-a {
+    padding: 6px 8px 6px 8px; background-color: #6b6b6b;
+    font-weight: bold; font-size: 13px; color: #fff;
+    text-shadow: 1px 1px 1px #333; text-align: center;}
+.black ul.mega-menu li .sub li.mega-hdr a.mega-hdr-a:hover {background-color: #00bfec; color: #f0f0f0; text-shadow: none;}
+.black ul.mega-menu .sub li.mega-hdr {margin-top: 0px; }
+.black ul.mega-menu .sub li.mega-hdr ul {border: none; margin: 0px; padding-right: 4px;}
+.black ul.mega-menu .sub li.mega-hdr li ul.scroll {background-color: #313131; min-height: 386px; height: 386px; overflow-x: hidden; overflow-y: scroll;}
+.black ul.mega-menu .sub li.mega-hdr li {overflow: hidden;}
+.black ul.mega-menu .sub li.mega-hdr li a {font-size: 13px; padding: 6px; color: #fff; background-color: #313131; font-weight: normal; white-space: nowrap;}
+.black ul.mega-menu .sub li.mega-hdr li a:focus,
+.black ul.mega-menu .sub li.mega-hdr li a:hover {color: #fff; background-color: #00bfec;}
+.black ul.mega-menu .sub ul li {padding-right: 0;}
+.black ul.mega-menu li .sub-container.non-mega .sub {background-color: #313131; padding: 0;}
+.black ul.mega-menu li .sub-container.non-mega li {background-color: #313131; padding: 0; width: 190px;}
+.black ul.mega-menu li .sub-container.non-mega li a {color: #fff; background-color: #313131; border-top: 1px solid #fff; font-size: 13px; padding: 6px; }
+.black ul.mega-menu li .sub-container.non-mega li a:hover {background-color: #00bfec; color: #fff;}
+
+/* for SD Admin */
+.black .plugins-list-header{
+  background: #6b6b6b url(menuskins/images/bg_mega_hdr.png) no-repeat 0 0;
+  color: #fff; font-weight: bold; font-size: 13px;
+  overflow: hidden;
+  padding: 6px;
+  text-shadow: 1px 1px 1px #333; text-align: left;
+  white-space: nowrap;
+}
+.black ul.mega-menu div#plugin_hint { margin: 0; padding: 0px 4px 8px 4px; text-shadow: none; white-space: nowrap;}
+.black ul.mega-menu .sub li.plugins-options ul {
+  background-color: #313131;
+  min-height: 386px; height: 386px;
+  overflow: hidden;
+}
+.black ul.mega-menu .sub li.plugins-list ul {
+  background-color: #313131;
+  min-height: 386px; height: 286px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}

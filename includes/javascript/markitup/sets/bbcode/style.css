@@ -1,0 +1,104 @@
+/* -------------------------------------------------------------------
+// markItUp!
+// By Jay Salvat - http://markitup.jaysalvat.com/
+// ------------------------------------------------------------------*/
+.bbcode .markItUpButton1 a  { background-image:url(../../../../images/markitup/bold.png); }
+.bbcode .markItUpButton2 a  { background-image:url(../../../../images/markitup/italic.png); }
+.bbcode .markItUpButton3 a  { background-image:url(../../../../images/markitup/underline.png); }
+.bbcode .markItUpButton4 a  { background-image:url(../../../../images/markitup/picture.png); }
+.bbcode .markItUpButton5 a  { background-image:url(../../../../images/markitup/link.png); }
+.bbcode .markItUpButton6 a { background-image:url(../../../../images/markitup/colors.png); }
+.bbcode .markItUpButton6 ul { padding:1px; width:81px; }
+.bbcode .markItUpButton6  li {
+    border:1px solid white;
+    width:25px;  height:25px;
+    overflow:hidden;
+    padding:0px; margin:0px;
+    float:left;
+}
+.bbcode .markItUpButton6 ul a {width:25px; height:25px;}
+.bbcode .markItUpButton6 ul a:hover { background-color: transparent; }
+.bbcode .markItUpButton6 .col1-1 a {background:yellow;}
+.bbcode .markItUpButton6 .col1-2 a {background:orange;}
+.bbcode .markItUpButton6 .col1-3 a {background:red;}
+.bbcode .markItUpButton6 .col2-1 a {background:blue;}
+.bbcode .markItUpButton6 .col2-2 a {background:purple;}
+.bbcode .markItUpButton6 .col2-3 a {background:green;}
+.bbcode .markItUpButton6 .col3-1 a {background:white;}
+.bbcode .markItUpButton6 .col3-2 a {background:gray;}
+.bbcode .markItUpButton6 .col3-3 a {background:black;}
+.bbcode .markItUpButton7 a  { background-image:url(../../../../images/markitup/fonts.png); }
+.bbcode .markItUpButton8 a { /* Smilies */
+  background-image:url(../../../../images/smileys/smile.gif);
+}
+.bbcode .markItUpButton9 a  { background-image:url(../../../../images/markitup/list-bullet.png); }
+.bbcode .markItUpButton10 a  { background-image:url(../../../../images/markitup/list-numeric.png); }
+.bbcode .markItUpButton11 a  { background-image:url(../../../../images/markitup/list-item.png); }
+.bbcode .markItUpButton12 a  { background-image:url(../../../../images/markitup/quotes.png); }
+.bbcode .markItUpButton13 a  { background-image:url(../../../../images/markitup/code.png); }
+.bbcode .markItUpButton14 a  { background-image:url(../../../../images/markitup/clean.png); }
+.bbcode .markItUpButton18 a { background-image:url(../../../../images/markitup/preview.png); display: none; }
+
+/* Color Palette */
+.bbcode .colors a { background-image:url(../../../../images/markitup/colors.png); }
+  .bbcode .colors ul {
+    width:110px;
+    padding: 2px !important;
+    margin: 2px !important; }
+  .bbcode .colors li {
+    border:1px solid white;
+    width:25px;
+    height:25px;
+    overflow:hidden;
+    padding:2px !important;
+    margin:2px !important;
+    float:left; }
+  .bbcode .colors ul a { width: 25px; height: 25px; }
+  .bbcode .colors ul a:hover { background-color: transparent; }
+  .bbcode .colors .col1-1 a { background:yellow; }
+  .bbcode .colors .col1-2 a { background:orange; }
+  .bbcode .colors .col1-3 a { background:red; }
+  .bbcode .colors .col2-1 a { background:blue; }
+  .bbcode .colors .col2-2 a { background:purple; }
+  .bbcode .colors .col2-3 a { background:green; }
+  .bbcode .colors .col3-1 a { background:white; }
+  .bbcode .colors .col3-2 a { background:gray; }
+  .bbcode .colors .col3-3 a { background:black; }
+.bbcode .calculator a { background-image:url(../../../../images/markitup/calculator.png); }
+
+/* Smileys - point to /includes/images/smileys folder! v3.3.2 */
+.bbcode .smileys a { background-image:url(../../../../images/smileys/smile.gif); }
+  .bbcode .smileys ul {
+    width: 126px;
+    padding: 2px !important;
+    margin: 2px !important; }
+  .bbcode .smileys li {
+    border: 1px solid white;
+    width: 20px;
+    height: 22px;
+    overflow: hidden;
+    padding: 2px !important;
+    margin: 2px !important;
+    float: left; }
+  .bbcode .smileys ul a { width: 20px; height: 20px; }
+  .bbcode .smileys ul a:hover {background-color: transparent;}
+  .bbcode .smileys .col1-1 a {background-image:url(../../../../images/smileys/smile.png);}
+  .bbcode .smileys .col1-2 a {background-image:url(../../../../images/smileys/bigsmile.png);}
+  .bbcode .smileys .col1-3 a {background-image:url(../../../../images/smileys/laugh.png);}
+  .bbcode .smileys .col1-4 a {background-image:url(../../../../images/smileys/angry.png);}
+  .bbcode .smileys .col2-1 a {background-image:url(../../../../images/smileys/neutral.png);}
+  .bbcode .smileys .col2-2 a {background-image:url(../../../../images/smileys/confuse.png);}
+  .bbcode .smileys .col2-3 a {background-image:url(../../../../images/smileys/surprise.png);}
+  .bbcode .smileys .col2-4 a {background-image:url(../../../../images/smileys/cool.png);}
+  .bbcode .smileys .col3-1 a {background-image:url(../../../../images/smileys/tongue.png);}
+  .bbcode .smileys .col3-2 a {background-image:url(../../../../images/smileys/worry.png);}
+  .bbcode .smileys .col3-3 a {background-image:url(../../../../images/smileys/wink.png);}
+  .bbcode .smileys .col3-4 a {background-image:url(../../../../images/smileys/sleepy.png);}
+  .bbcode .smileys .col4-1 a {background-image:url(../../../../images/smileys/blush.png);}
+  .bbcode .smileys .col4-2 a {background-image:url(../../../../images/smileys/saint.png);}
+  .bbcode .smileys .col4-3 a {background-image:url(../../../../images/smileys/blue.png);}
+  .bbcode .smileys .col4-4 a {background-image:url(../../../../images/smileys/frown.png);}
+  .bbcode .smileys .col5-1 a {background-image:url(../../../../images/smileys/sweatdrop.png);}
+  .bbcode .smileys .col5-2 a {background-image:url(../../../../images/smileys/cake.png);}
+  .bbcode .smileys .col5-3 a {background-image:url(../../../../images/smileys/star.gif);}
+  .bbcode .smileys .col5-4 a {background-image:url(../../../../images/smileys/heart.gif);}

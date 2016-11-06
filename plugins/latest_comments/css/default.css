@@ -1,0 +1,18 @@
+div.sdcommentdiv {
+    border-bottom: 1px solid #000000;
+    font-size: 11px;
+    padding: 4px 6px;
+}
+div.sdcommentdiv img.avatar {
+    border: medium none;
+    float: left;
+    margin-right: 8px;
+}
+div.sdcommentdiv { min-height: 40px; padding: 4px; }
+div.p_Latest_Comments .backgroundcurrentuser {background-color: #fff;}
+div.p_Latest_Comments .backgroundnouser {background-color: #fff;}
+div.p_Latest_Comments .backgroundotheruser {background-color: #FFE7BA;}
+
+div.p_Latest_Comments .linkcurrentuser {color: #000;}
+div.p_Latest_Comments .linknouser {color: #000;}
+div.p_Latest_Comments .linkotheruser {color: #FF0000;}

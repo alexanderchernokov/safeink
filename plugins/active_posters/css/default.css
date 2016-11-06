@@ -1,0 +1,29 @@
+div#pXXX_active_posters { padding:0; margin:0; width: 100%; }
+div#pXXX_active_posters ul { list-style-type: none; list-style: none outside none; padding:0; margin:0; }
+div#pXXX_active_posters ul li {
+  list-style-type: none;
+  height:auto !important;
+  margin: 0; padding: 0;
+  overflow: hidden;
+}
+div#pXXX_active_posters ul li div.pXXX_outer { width: 100%; }
+div#pXXX_active_posters ul li img.avatar {
+  background-color: #fff;
+  border: 0;
+  padding: 4px;
+  border: 1px solid #eee;
+}
+div#pXXX_active_posters ul li div.pXXX_avatar {
+  float: left;
+  width: auto;
+  height: auto;
+}
+div#pXXX_active_posters ul li div.pXXX_user {
+  display: inline;
+  float: left;
+  font:inherit;
+  padding: 4px;
+  width: auto;
+}
+div#pXXX_active_posters ul li span { font:inherit; padding-top: 4px; }
+div#pXXX_active_posters ul li span.pXXX_count { color: #666; }

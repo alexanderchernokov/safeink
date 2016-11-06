@@ -1,0 +1,17 @@
+div.link-directory-container { margin-bottom: 4px; margin-top: 4px; padding: 2px; }
+div.link-directory-menu { padding: 4px; }
+div.link-directory-submit { padding: 4px; }
+table.link-directory-sections { padding: 0; width:100%; }
+table.link-directory-sections td.link-directory-cell {}
+table.link-directory-links { padding: 0; width:100%; }
+table.link-directory-links td {
+  background: transparent;
+  padding: 4px 20px 20px 4px;
+  vertical-align: top;
+}
+table.link-directory-links td table { border:0; border-style: none; padding: 0; }
+table.link-directory-links td:hover { background-color: #ACACAC; }
+span.linksectiontitle {}
+span.linksectiondescr {}
+a.linklinktitle {}
+table.link-directory-links img { max-width: 200px; max-height: 200px; }

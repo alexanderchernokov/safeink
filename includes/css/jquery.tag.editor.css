@@ -1,0 +1,37 @@
+/* Tags editor */
+ul.tagEditor {
+  border: none; /* 1px solid #d0d0d0; */
+  margin: 4px 0;
+  max-height: 150px;
+  overflow: auto;
+  padding: 4px !important;
+  width: 98%; /*194px*/
+  vertical-align: top; }
+  
+  ul.tagEditor li:after{
+	font-family: FontAwesome;
+    content: "\f00d\00a0"; 
+	color: red;
+	padding: 1px 0 0 6px;
+    }
+
+ul.tagEditor li {
+  color: #c65353;
+  cursor: pointer;
+  display: inline-block;
+  height: 22px !important;
+  list-style-type: none;
+  padding: 0 6px !important;
+  margin: 2px 4px;
+  background-color: #ffd7d7;}
+  
+.tagEditor li:hover { background-color: #fcf8e3; /* #00BFEC;*/ }
+
+.tagEditor div {
+  display: inline;
+  float: left;
+  padding: 1px;
+  margin: 1px;
+  overflow-x: hidden;
+  position: relative;
+  width: 150px; }

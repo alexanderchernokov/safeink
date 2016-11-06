@@ -1,0 +1,47 @@
+form#searchform input[type=text]{
+  width: 250px;
+}
+div.searchform .acBox {
+  position: absolute;
+  margin: 0px;
+  width: 400px;
+  background-color: #acbox_bgcolor;
+  border: 1px solid #acbox_bordercolor;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  z-index: 1000;
+}
+div.searchform .acList {
+  background-color: #acbox_bgcolor;
+  margin: 0px; padding: 0px;
+}
+div.searchform .acList li {
+  cursor: pointer;
+  list-style-type: none;
+  margin: 0px;
+  min-height: 25px;
+  padding: 0px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+div.searchform .acList li a {
+  cursor: pointer;
+  list-style-type: none;
+  margin: 0px 10px 0 10px;
+  -moz-border-radius: 7px;
+  -webkit-border-radius: 7px;
+}
+div.searchform .acList li:hover {
+  background-color: #acresult_hovercolor;
+}
+.highlight { background-color: yellow; text-decoration: underline; }
+div.searchresults {
+  clear: both;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px;
+}

@@ -1,0 +1,21 @@
+div.rating_wrapper * { font-size:12px !important; margin: 0; border: 0; padding: 0; height: 22px; text-align: left; }
+div.rating_wrapper { overflow: show; height: 20px; margin-bottom: 2px; }
+div.sp_rating { /*font-family: Helvetica,Arial,sans-serif;*/ line-height:1.7em; height: 100%; color:#5f5f5f; display:block; }
+  div.sp_rating div.rating { float:left; padding-right: 4px; padding-top: 0; }
+  div.sp_rating div.base { background:url(includes/images/ratings.png) 0 0 no-repeat; width: 85px; height: 16px; float:left; padding-top: 0; padding-right: 4px; overflow:hidden; }
+  div.sp_rating div.average { background:url(includes/images/ratings.png) 0 -16px no-repeat; height: 16px; text-indent:-9999px; padding-top: 0; }
+  div.sp_rating div.votes { float:left; padding-top: 0; padding-right: 4px; }
+  div.sp_rating div.score { background: url(includes/images/ratings.png) 0 0 no-repeat; width:85px;
+    height: 16px; float:left; position:relative; padding-top: 0; margin-top: 0; }
+  div.sp_rating div.score a {
+      display: block; height: 100%; float: left; padding: 0; text-indent: -9999px; position: absolute;
+      margin-top: 0; overflow: hidden; line-height: 18px; }
+  div.sp_rating a.score1 {width:20%; z-index:55; }
+  div.sp_rating a.score2 {width:40%; z-index:54; }
+  div.sp_rating a.score3 {width:60%; z-index:53; }
+  div.sp_rating a.score4 {width:80%; z-index:52; }
+  div.sp_rating a.score5 {width:100%; z-index:51; }
+  div.sp_rating div.score a:hover { background:url(includes/images/ratings.png) bottom right no-repeat; }
+  div.sp_rating div.rating_status { height: 18px; overflow: hidden; position: relative; }
+  div.sp_rating div.rating_score_this { height: 100%; overflow: show; width: 120px; }
+  div.sp_rating div.rating_score_this a { color: #44b0eb; }

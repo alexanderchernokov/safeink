@@ -1,0 +1,28 @@
+/* User Registration plugin CSS */
+div#p12_registration {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+div#p12_registration form {
+  background: transparent;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 15px;
+  padding: 5px;
+  max-width: 400px;
+}
+
+div#p12_registration table {
+  background: none;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+div#p12_registration table td.registration-prompt {
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+div#p12_registration table td.registration-detail {
+    margin-bottom: 10px;
+    padding: 10px;
+}

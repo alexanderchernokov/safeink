@@ -1,0 +1,24 @@
+div.latest_articles { margin-bottom: 8px; }
+
+div.latest_articles_container {
+  display: block;
+  clear: both;
+  height: auto;
+  margin: 0;
+  padding-right: 14px;
+}
+div.latest_article { display: block; clear: both; float: none; padding: 0px; margin-bottom: 8px;}
+div.latest_article img {
+  background-color: #fff;
+  display: inline-block;
+  float: left;
+  padding: 3px;
+  border: 1px solid #eee;
+  height: 40px;
+  padding: 3px;
+  margin: 2px 12px 2px 2px;
+  width: 40px;
+  box-shadow:#333 2px 2px 5px;
+  -moz-box-shadow:#333 2px 2px 5px;
+  -webkit-box-shadow:#333 2px 2px 5px;
+}

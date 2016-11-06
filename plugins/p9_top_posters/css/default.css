@@ -1,0 +1,27 @@
+div#p9_top_posters { padding: 0px; margin: 0px; width: 100%; }
+div#p9_top_posters div.p9_header { display: none; padding: 4px; }
+div#p9_top_posters ul { clear: both; padding: 0; margin: 0; }
+div#p9_top_posters ul li {
+  list-style: none outside none;
+  height: auto !important;
+  margin: 2px 0 0 0; padding: 2px 0 0 0;
+  overflow:hidden; }
+div#p9_top_posters ul li div.p9-outer { width: 100%; }
+div#p9_top_posters ul li img.avatar {
+  border: 0;
+  padding: 4px;
+  border: 1px solid #eee; }
+div#p9_top_posters ul li div.p9-avatar {
+  float: left;
+  height: auto;
+  width: auto; }
+div#p9_top_posters ul li div.p9-user {
+  display: inline;
+  float: left;
+  font: inherit;
+  padding: 4px;
+  margin-bottom: auto;
+  margin-top: auto;
+  width: auto;}
+div#p9_top_posters ul li span { padding-top: 4px; }
+div#p9_top_posters ul li span.p9-count { color: #666; }

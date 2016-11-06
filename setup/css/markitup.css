@@ -1,0 +1,242 @@
+/* -------------------------------------------------------------------
+// markItUp!
+// By Jay Salvat - http://markitup.jaysalvat.com/
+// ------------------------------------------------------------------*/
+.bbcode .markItUpButton1 a {background-image:url(includes/images/markitup/bold.png);}
+.bbcode .markItUpButton2 a {background-image:url(includes/images/markitup/italic.png);}
+.bbcode .markItUpButton3 a {background-image:url(includes/images/markitup/underline.png);}
+.bbcode .markItUpButton4 a {background-image:url(includes/images/markitup/picture.png);}
+.bbcode .markItUpButton5 a {background-image:url(includes/images/markitup/link.png);}
+.bbcode .markItUpButton6 a {background-image:url(includes/images/markitup/colors.png);}
+.bbcode .markItUpButton6 ul { padding:1px; width:81px; }
+.bbcode .markItUpButton6  li {
+    border:1px solid white;
+    width:25px;  height:25px;
+    overflow:hidden;
+    padding:0px; margin:0px;
+    float:left;
+}
+.bbcode .markItUpButton6 ul a {width:25px; height:25px;}
+.bbcode .markItUpButton6 ul a:hover { background-color:none; }
+.bbcode .markItUpButton6 .col1-1 a {background:yellow;}
+.bbcode .markItUpButton6 .col1-2 a {background:orange;}
+.bbcode .markItUpButton6 .col1-3 a {background:red;}
+.bbcode .markItUpButton6 .col2-1 a {background:blue;}
+.bbcode .markItUpButton6 .col2-2 a {background:purple;}
+.bbcode .markItUpButton6 .col2-3 a {background:green;}
+.bbcode .markItUpButton6 .col3-1 a {background:white;}
+.bbcode .markItUpButton6 .col3-2 a {background:gray;}
+.bbcode .markItUpButton6 .col3-3 a {background:black;}
+.bbcode .markItUpButton7 a {background-image:url(includes/images/markitup/fonts.png);}
+.bbcode .markItUpButton8 a { /* Smilies */
+  background-image:url(includes/images/smileys/smile.png);
+}
+.bbcode .markItUpButton9 a {background-image:url(includes/images/markitup/list-bullet.png);}
+.bbcode .markItUpButton10 a {background-image:url(includes/images/markitup/list-numeric.png);}
+.bbcode .markItUpButton11 a {background-image:url(includes/images/markitup/list-item.png);}
+.bbcode .markItUpButton12 a {background-image:url(includes/images/markitup/quotes.png);}
+.bbcode .markItUpButton13 a {background-image:url(includes/images/markitup/code.png);}
+.bbcode .markItUpButton14 a {background-image:url(includes/images/markitup/clean.png);}
+.bbcode .markItUpButtonXX a {background-image:url(includes/images/markitup/preview.png); display: none;}
+
+/* Color Palette */
+.bbcode .colors a { background-image:url(includes/images/markitup/colors.png);}
+  .bbcode .colors ul {
+    width:110px;
+    padding:2px !important;
+    margin:2px !important;}
+  .bbcode .colors li {
+    border:1px solid white;
+    width:25px;
+    height:25px;
+    overflow:hidden;
+    padding:2px !important;
+    margin:2px !important;
+    float:left;}
+  .bbcode .colors ul a { width:25px; height:25px; }
+  .bbcode .colors ul a:hover {background-color: none;}
+  .bbcode .colors .col1-1 a {background:yellow;}
+  .bbcode .colors .col1-2 a {background:orange;}
+  .bbcode .colors .col1-3 a {background:red;}
+  .bbcode .colors .col2-1 a {background:blue;}
+  .bbcode .colors .col2-2 a {background:purple;}
+  .bbcode .colors .col2-3 a {background:green;}
+  .bbcode .colors .col3-1 a {background:white;}
+  .bbcode .colors .col3-2 a {background:gray;}
+  .bbcode .colors .col3-3 a {background:black;}
+.bbcode .calculator a { background-image:url(includes/images/markitup/calculator.png); }
+
+/* Smileys - point to /includes/images/smileys folder! v3.3.2 */
+.bbcode .smileys a { background-image:url(includes/images/smileys/smile.png); }
+  .bbcode .smileys ul {
+    width: 126px;
+    padding: 2px !important;
+    margin: 2px !important; }
+  .bbcode .smileys li {
+    border: 1px solid white;
+    width: 20px;
+    height: 22px;
+    overflow: hidden;
+    padding: 2px !important;
+    margin: 2px !important;
+    float: left; }
+  .bbcode .smileys ul a { width: 20px; height: 20px; }
+  .bbcode .smileys ul a:hover {background-color: none;}
+  .bbcode .smileys .col1-1 a {background-image:url(includes/images/smileys/smile.png);}
+  .bbcode .smileys .col1-2 a {background-image:url(includes/images/smileys/bigsmile.png);}
+  .bbcode .smileys .col1-3 a {background-image:url(includes/images/smileys/laugh.png);}
+  .bbcode .smileys .col1-4 a {background-image:url(includes/images/smileys/angry.png);}
+  .bbcode .smileys .col2-1 a {background-image:url(includes/images/smileys/neutral.png);}
+  .bbcode .smileys .col2-2 a {background-image:url(includes/images/smileys/confuse.png);}
+  .bbcode .smileys .col2-3 a {background-image:url(includes/images/smileys/surprise.png);}
+  .bbcode .smileys .col2-4 a {background-image:url(includes/images/smileys/cool.png);}
+  .bbcode .smileys .col3-1 a {background-image:url(includes/images/smileys/tongue.png);}
+  .bbcode .smileys .col3-2 a {background-image:url(includes/images/smileys/worry.png);}
+  .bbcode .smileys .col3-3 a {background-image:url(includes/images/smileys/wink.png);}
+  .bbcode .smileys .col3-4 a {background-image:url(includes/images/smileys/sleepy.png);}
+  .bbcode .smileys .col4-1 a {background-image:url(includes/images/smileys/blush.png);}
+  .bbcode .smileys .col4-2 a {background-image:url(includes/images/smileys/saint.png);}
+  .bbcode .smileys .col4-3 a {background-image:url(includes/images/smileys/blue.png);}
+  .bbcode .smileys .col4-4 a {background-image:url(includes/images/smileys/frown.png);}
+  .bbcode .smileys .col5-1 a {background-image:url(includes/images/smileys/sweatdrop.png);}
+  .bbcode .smileys .col5-2 a {background-image:url(includes/images/smileys/cake.png);}
+  .bbcode .smileys .col5-3 a {background-image:url(includes/images/smileys/star.gif);}
+  .bbcode .smileys .col5-4 a {background-image:url(includes/images/smileys/heart.gif);}
+/* -------------------------------------------------------------------
+// markItUp! Universal MarkUp Engine, JQuery plugin
+// By Jay Salvat - http://markitup.jaysalvat.com/
+// ------------------------------------------------------------------*/
+.markItUp * { margin:0; padding:0; outline:none; }
+.markItUp a:link,
+.markItUp a:visited { color:#000; text-decoration:none; }
+.markItUp  { width:98%; margin:5px 0 5px 0; border:5px solid #F5F5F5; }
+.markItUpContainer  {
+  border:1px solid #ccc;
+  background:#FFF;
+  padding:5px 5px 2px 5px;
+  font:11px Arial, Helvetica, Verdana, sans-serif;}
+textarea.markItUpEditor {
+  font:14px 'Lucida Console', Courier, monospace;
+  margin: 2px;
+  border:1px solid #ccc;
+  clear:both;
+  display:block;
+  line-height:17px;
+  overflow: scroll;
+  width: inherited; }
+.markItUpPreviewFrame {
+  overflow:auto;
+  background-color:#fff;
+  border:1px solid #ccc;
+  width:99.9%;
+  height:300px;
+  margin:5px 0;}
+.markItUpFooter { clear:both; width:100%; cursor:n-resize; }
+.markItUpResizeHandle {
+  overflow:hidden;
+  width:22px; height:5px;
+  margin-left:auto;
+  margin-right:auto;
+  background-image:url(includes/images/markitup/handle.png);
+  cursor:n-resize; }
+/* first row of buttons */
+.markItUpHeader ul  {
+  list-style-type: none !important;
+  padding: 2px !important;
+  margin: 2px !important;
+}
+.markItUpHeader ul li,
+.markItUpHeader ul ul li {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.markItUpHeader ul li {
+  list-style:none !important;
+  float:left;
+  position:relative;
+  margin-right: 2px !important;
+  padding: 2px !important;
+}
+.markItUpHeader ul li:hover {
+  background-color: #f0f0f0;
+}
+.markItUpHeader ul li ul {
+  display:none;
+  list-style-type: none;
+}
+.markItUpHeader ul li:hover > ul {
+  list-style-type: none;
+  display:block;
+}
+.markItUpHeader ul .markItUpDropMenu {
+  background:transparent url(includes/images/markitup/menu.png) no-repeat 115% 50%;
+  margin-right:4px;
+  z-index: 10; /* 1000; */
+}
+.markItUpHeader ul .markItUpDropMenu li {
+  margin-right:0px;
+  list-style: none !important;
+}
+.markItUpHeader ul .markItUpSeparator {
+  background:transparent url(includes/images/markitup/handle.png) repeat-y;
+  margin:0 10px;
+  width:1px;
+  height:16px;
+  overflow:hidden;
+  background-color:#ccc;
+}
+.markItUpHeader ul ul .markItUpSeparator {
+  width:auto; height:1px;
+  margin:0px;
+}
+/* next rows of buttons */
+.markItUpHeader ul ul {
+  display:none;
+  position:absolute;
+  list-style:none !important;
+  top:22px; left:0px;
+  background:#F5F5F5;
+  border:1px solid #d0d0d0;
+  height:inherit;
+  width:120px;
+}
+.markItUpHeader ul ul li {
+  float:none;
+  border-bottom:1px solid #d0d0d0;
+}
+.markItUpHeader ul ul .markItUpDropMenu {
+  background:#F5F5F5 url(includes/images/markitup/submenu.png) no-repeat 100% 50%;
+}
+/* next rows of buttons */
+.markItUpHeader ul ul ul {
+  position:absolute;
+  top:-1px; left:120px;
+}
+.markItUpHeader ul ul ul li {
+  float:none;
+}
+.markItUpHeader ul a {
+  display:block;
+  width:18px; height:18px;
+  text-indent:-10000px;
+  background-repeat:no-repeat;
+  padding:3px;
+  margin:0px;
+}
+.markItUpHeader ul ul a {
+  display:block;
+  padding-left:0px;
+  text-indent:0;
+  width:120px;
+  padding:5px 2px 5px 30px;
+  background-position:2px 50%;
+}
+.markItUpHeader ul ul a:hover {
+  color:#FFF;
+  background-color:#d0d0d0;
+  width:inherit;
+}
+li.markItUpButton {
+  list-style:none;
+  list-style-type: none;
+}

@@ -1,0 +1,50 @@
+/* User Login Panel plugin CSS */
+.login-panel {
+  padding: 0px;
+  margin: 0 0 8px 4px;
+}
+
+.login-panel div.login-avatar {
+  clear: both;
+  display: block;
+}
+
+.login-form { padding: 0; }
+  .login-form input { width: 70px; }
+  .login-form .login-div-user1 { display: inline; float: left; padding: 0px; vertical-align: middle; width: 80px;}
+  .login-form .login-div-user2 { display: block; clear: right; }
+  .login-form .login-div-pwd1  { clear: left; display: inline; float: left; padding: 0px; vertical-align: middle; width: 80px; }
+  .login-form .login-div-pwd2  { display: block; clear: right; }
+  .login-form .login-div-remember { display: block; clear: both; padding: 0px; width: 100%; }
+  .login-form .login-div-remember input { border: 0; padding: 4px; }
+  .login-form .login-div-submit   { display: block; clear: both; padding: 0px; }
+  .login-div-register { display: block; clear: both; padding: 6px; width: 100px; }
+  .login-div-lostpwd { display: block; clear: both; padding: 6px; width: 100px; }
+
+.login-form input[type="submit"] {
+  background-color: #58B9EB;
+  border: 1px solid #40A2D4;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px 2px 8px;
+  margin: 4px 4px 8px 0px;
+  width: auto;
+  border-radius:4px;
+  -webkit-border-radius:4px;
+}
+
+.login-form input[type="submit"]:hover {
+  background-color:#80cdf5;
+  border-color:#52b1e2;
+}
+
+.login-welcome {
+  clear: right;
+  display: block;
+  font-size: 12px; font-weight: bold;
+  padding: 0;
+  margin-bottom: 8px;
+}

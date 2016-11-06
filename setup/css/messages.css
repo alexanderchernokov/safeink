@@ -1,0 +1,13 @@
+div #error_message {
+	background: #ffeaef;
+	border: 3px solid #ff829f;
+	left: 55px;
+	margin-bottom: 15px;
+	padding: 15px; }
+ 
+div #success_message {
+	background: #eaf4ff;
+	border: 3px solid #82c0ff;
+	left: 55px;
+	margin-bottom: 15px;
+	padding: 15px; }

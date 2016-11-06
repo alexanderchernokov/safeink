@@ -1,0 +1,15 @@
+Options All -Indexes
+# If errors occur like Internal Server Error, comment below line
+# out by adding a # in front of it:
+Options +FollowSymLinks
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# Uncomment the following line if your webserver's URL
+# is not residing in the server's web root folder:
+# RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*) index.php
+</IfModule>

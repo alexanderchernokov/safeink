@@ -1,0 +1,108 @@
+{* Smarty Template for SD Login Panel 2012-09-02 *}
+
+<!-- Section Header Title -->
+<section class="bg-grey padding-top-45 padding-bottom-45 clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <div class="col-md-12">
+                    <h3>Create account</h3>
+                </div>
+            </div>
+        </div><!-- End Row -->
+    </div><!-- End container -->
+</section><!--  End Section -->
+
+<!-- Section BreadCrumb -->
+<div class="no-padding border-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ol class="breadcrumb breadcrumb-finance">
+                    <li><a href="index.html"> <i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li class="active">Create account</li>
+                </ol>
+            </div><!--  End col -->
+        </div> <!-- End Row -->
+    </div><!-- End container -->
+</div><!--  End Section -->
+
+<div class="line"></div>
+
+<!--List Blog -->
+<div class="no-padding">
+    <div class="container">
+        <div class="row row-eq-height">
+            <div id="primary" class="content-area col-md-12 no-padding-right">
+                <main id="main" class="site-main padding-top-50" >
+
+
+<!-- Login Panel -->
+<div class="login-panel" id="login-panel">
+    {if $loggedin && empty($login_errors)}
+    {if $display_avatar}<div class="login-avatar">{$userdata.avatar}</div>{/if}
+    <div class="login-welcome">{$phrases.welcome_back} {$userdata.username}
+        {if !empty($userdata.usergroup_details.displayname)}<br />
+        <span{$userdata.color}>{$userdata.usergroup_details.displayname}</span>
+        {/if}
+    </div>
+    {if !$ucp_basic && $settings.display_profile_link}
+    <a class="login-link" href="{$userdata.link}">{$phrases.my_account}</a><br />
+    {/if}
+    {if $settings.display_admin_link && $can_admin}
+    <a class="login-link" href="{$admin_link}">{$phrases.admin_panel}</a><br />
+    {/if}
+    <a class="login-link" href="{$logout_link}">{$phrases.logout}</a><br />
+    {if !empty($can_show_pm) && !empty($private_messages_code)}{$private_messages_code}{/if}
+    {if !empty($private_messages_code)}{$private_messages_code}{/if}
+    {else}
+    {if $login_errors}<div id="error_message">{$login_errors}</div><br />{/if}
+    <form class="form-contact-finance form-contact-3" action="{$form_post_link}" method="post">
+        {$SecurityFormToken}
+        <input type="hidden" name="login" value="login" />
+        <div class="form-group col-sm-12">
+            <input name="loginusername" type="text" maxlength="{$max_username_length}" class="form-control"  placeholder="{$phrases.username}" />
+        </div>
+        <div class="form-group col-sm-12">
+            <input name="loginpassword" type="password" maxlength="30" class="form-control"  placeholder="{$phrases.password}" />
+        </div>
+        <div class="form-group col-sm-12">
+            <input type="checkbox" name="rememberme" checked="checked" value="1"/> {$phrases.remember_me}
+        </div>
+        <div class="form-group col-sm-12">
+            <input type="submit" name="loginsubmit" class="ot-btn large-btn btn-rounded  btn-main-color btn-submit"  value="{$login_button_text}" />
+        </div>
+    </form>
+    {if $register_link && !empty($settings.display_register_link)}
+    <div id="login-div-register">{$phrases.not_registered} <a href="{$register_link}">{$phrases.register_now}</a></div>
+    {/if}
+    {if $lostpwd_link && !empty($settings.display_forgot_password_link)}
+    <div id="login-div-lostpwd"><a href="{$lostpwd_link}">{$phrases.forgot_password}</a></div>
+    {/if}
+    {/if}
+</div>
+
+
+                </main> <!-- End Main -->
+            </div>
+
+
+        </div><!-- End Row -->
+
+    </div><!-- End container -->
+</div><!--  End Section -->
+
+<!-- Get a quote section -->
+<section class="bg-grey no-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="quote-warp">
+                    <div class="quote-text">
+                        <h2> We focus on advice consulting business financials <a href="#" class="ot-btn btn-rounded large-btn btn-hightlight-color">Get A Quote</a></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

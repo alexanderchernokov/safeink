@@ -1,0 +1,34 @@
+div.jdialog_dialog_popup,
+div.contextual_dialog_shadow,
+div.contextual_dialog_content {
+  border-radius: 5px; -moz-border-radius: 5px;
+  -webkit-border-radius: 5px; -o-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  font-size: 12px;
+}
+
+div.dialog_body {
+
+  border: 1px solid #307ECC;
+  background-color: #FFF !important;
+}
+div.jdialog_dialog_popup .jdialog_close {
+  padding: 1px;
+  margin: 8px 3px 0px 0px;
+}
+
+#iptools_popup div.jdialog_dialog_popup a {
+  background-color: transparent;
+  color: #222222;
+  clear: both;
+  display: block;
+  font-size: 13px !important;
+  padding: 4px 4px 0 4px;
+  margin: 0px;
+  text-decoration: none;
+  width: auto;
+}
+#iptools_popup div.jdialog_dialog_popup a:hover {
+  color: #808080;
+  text-decoration: none;
+}
