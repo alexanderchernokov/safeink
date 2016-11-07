@@ -6,7 +6,7 @@
  * Time: 10:51
  */
 if(!defined('IN_PRGM')) return false;
-
+include_once ('includes/custom_languages/'.$user_language.'/payments.php');
 if(!class_exists('SD_Payment'))
 {
     class SD_Payment
@@ -22,106 +22,21 @@ if(!class_exists('SD_Payment'))
                 $this->payments = 'sd_payments';
             }
         }
-        function DisplayForm()
-        {
-            global $DB, $userinfo;
 
-            echo '<div class="finance-tabs-style-2 clearfix">
-                      <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#PersonalInfo" aria-expanded="false">Personal Info</a></li>
-                        <li class=""><a data-toggle="tab" href="#CompanyInfo" aria-expanded="false">Company Info</a></li>
-                        <li class=""><a data-toggle="tab" href="#PaymentInfo" aria-expanded="false">Payment Info</a></li>
-                        <li class=""><a data-toggle="tab" href="#ChangePassword" aria-expanded="true">Change Password</a></li>
-                      </ul>
-
-                        <div class="tab-content">
-                          <div id="PersonalInfo" class="tab-pane fade active in">
-                                <h4> Personal Info</h4>
-                                <form class="form-contact-3 form-contact-finance" name="contact" method="post" action="send_form_email.php">
-                                    <div class="form-group col-sm-12  col-md-12">
-                                        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Your First Name" value="'.$userinfo['profile']['first_name'].'">
-                                    </div>
-                                    <div class="form-group col-sm-12 col-md-12">
-                                        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Your Last Name" value="'.$userinfo['profile']['last_name'].'" >
-                                    </div>
-                                    <div class="form-group col-sm-12 col-md-12">
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" value="'.$userinfo['email'].'">
-                                    </div>
-                                    <div class="form-group col-sm-12 col-md-12">
-                                        <input type="email" class="form-control" name="phone" id="phone" placeholder="Your Phone Number" value="'.$userinfo['profile']['contact_phone'].'">
-                                    </div>
-                                    
-                                    <button href="#" class="ot-btn large-btn btn-rounded  btn-main-color btn-submit">Save</button>
-                                </form> <!-- End Form -->
-                          </div>
-                          <div id="CompanyInfo" class="tab-pane fade">
-                                <h4> Company Info</h4>
-                                <form class="form-contact-3 form-contact-finance" name="contact" method="post" action="send_form_email.php">
-                                    <div class="form-group col-sm-12  col-md-12">
-                                        <input type="text" class="form-control" name="company_name" id="company_name" placeholder="Company Name" value="'.$userinfo['profile']['user_company'].'">
-                                    </div>
-                                    <div class="form-group col-sm-12 col-md-12">
-                                        <input type="text" class="form-control" name="company_fax" id="company_fax" placeholder="Fax Number" value="'.$userinfo['profile']['contact_office_phone'].'" >
-                                    </div>
-                                    
-                                    <button href="#" class="ot-btn large-btn btn-rounded  btn-main-color btn-submit">Save</button>
-                                </form> <!-- End Form -->
-                          </div>
-                          <div id="PaymentInfo" class="tab-pane fade">
-                                <h4> Payment Info</h4>
-                                <form class="form-contact-3 form-contact-finance" name="contact" method="post" action="send_form_email.php">
-                                    <h5>Paypal</h5>
-                                    <div class="form-group col-sm-12  col-md-12">
-                                        <input type="text" class="form-control" name="paypal" id="paypal" placeholder="PayPal account" value="'.$userinfo['profile']['user_company'].'">
-                                    </div>
-                                    <h5>Bank account</h5>
-                                    <div class="form-group col-sm-12 col-md-12">
-                                        <input type="text" class="form-control" name="swift" id="swift" placeholder="Swift" value="'.$userinfo['profile']['swift_number'].'" >
-                                    </div>
-                                    <div class="form-group col-sm-12 col-md-12">
-                                        <input type="text" class="form-control" name="ibann" id="ibann" placeholder="IBANN" value="'.$userinfo['profile']['ibann_number'].'" >
-                                    </div>
-                                    
-                                    <button href="#" class="ot-btn large-btn btn-rounded  btn-main-color btn-submit">Save</button>
-                                </form> <!-- End Form -->
-                          </div>
-                          <div id="ChangePassword" class="tab-pane fade">
-                                <h4> Change Password</h4>
-                                <form class="form-contact-3 form-contact-finance" name="contact" method="post" action="send_form_email.php">
-                                    <div class="form-group col-sm-12  col-md-12">
-                                        <input type="password" required class="form-control" name="password" id="password" placeholder="New Password" value="">
-                                    </div>
-                                    <h5>Bank account</h5>
-                                    <div class="form-group col-sm-12 col-md-12">
-                                        <input type="password" required class="form-control" name="v_password" id="v_password" placeholder="Verify New Password" value="" >
-                                    </div>
-                                    
-                                    <button type="submit" href="#" class="ot-btn large-btn btn-rounded  btn-main-color btn-submit">Save</button>
-                                </form> <!-- End Form -->
-                          </div>
-                        </div>
-            </div>';
-
-
-
-
-
-
-        }
         function DisplayPayments()
         {
-            global $DB, $userinfo;
+            global $DB, $userinfo,$payments_val;
 
             echo '<div class="finance-tabs-style-2 clearfix">
                       <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#OutgoingPayments" aria-expanded="false"><i class="fa fa-user"></i> Outgoing Payments</a></li>
-                        <li class=""><a data-toggle="tab" href="#IncomePayments" aria-expanded="false"><i class="fa fa-users" aria-hidden="true"></i> Income Payments</a></li>
-                        <li class=""><a data-toggle="tab" href="#PaymentsHistory" aria-expanded="false"><i class="fa fa-users" aria-hidden="true"></i> Payments History</a></li>
+                        <li class="active"><a data-toggle="tab" href="#OutgoingPayments" aria-expanded="false"><i class="fa fa-user"></i> '.$payments_val['outgoing_payments'].'</a></li>
+                        <li class=""><a data-toggle="tab" href="#IncomePayments" aria-expanded="false"><i class="fa fa-users" aria-hidden="true"></i> '.$payments_val['income_payments'].'</a></li>
+                        <li class=""><a data-toggle="tab" href="#PaymentsHistory" aria-expanded="false"><i class="fa fa-users" aria-hidden="true"></i> '.$payments_val['payments_history'].'</a></li>
                       </ul>
 
                         <div class="tab-content">
                           <div id="OutgoingPayments" class="tab-pane fade active in">
-                                <h4> Outgoing Payments</h4>
+                                <h4> '.$payments_val['outgoing_payments'].'</h4>
                                 
                                 <div class="accordion-style-light no-round">
                                     <div class="accordion-warp">
@@ -189,7 +104,7 @@ if(!class_exists('SD_Payment'))
                                 
                           </div>
                           <div id="IncomePayments" class="tab-pane fade">
-                                <h4> Income Payments</h4>
+                                <h4> '.$payments_val['income_payments'].'</h4>
                                 <div class="accordion-style-light no-round">
                                     <div class="accordion-warp">
                                       <div class="clearfix"></div>
@@ -255,7 +170,7 @@ if(!class_exists('SD_Payment'))
                                 </div>
                           </div>
                           <div id="PaymentsHistory" class="tab-pane fade">
-                                <h4> Payments History</h4>
+                                <h4> '.$payments_val['payments_history'].'</h4>
                                 <div class="accordion-style-light no-round">
                                     <div class="accordion-warp">
                                       <div class="clearfix"></div>
@@ -356,6 +271,10 @@ if(!class_exists('SD_Payment'))
 $p_payment = new SD_Payment();
 switch($_POST['action']){
     case 'update':
+        break;
+    case 'edit':
+        break;
+    case 'delete':
         break;
     default:
         $p_payment->DisplayPayments();
