@@ -10,6 +10,8 @@ $payments_val = array(
     'income_payments'=>'Income Payments',
     'payments_history'=>'Payments History',
     'create_new'=>'Create new payment process',
-    'no_payments_found'=>'No payments found'
-
+    'no_payments_found'=>'No payments found',
+    'to_do'=>'To Do list',
+    'invite_recipient'=>'Invite Recipient',
+    'activate'=>'Activate Process'
 );

@@ -29,9 +29,9 @@ if(!class_exists('SD_Payment'))
 
             echo '<div class="finance-tabs-style-2 clearfix">
                       <ul class="nav nav-tabs">
-                        <li class="active"><a data-toggle="tab" href="#OutgoingPayments" aria-expanded="false"><i class="fa fa-user"></i> '.$payments_val['outgoing_payments'].'</a></li>
-                        <li class=""><a data-toggle="tab" href="#IncomePayments" aria-expanded="false"><i class="fa fa-users" aria-hidden="true"></i> '.$payments_val['income_payments'].'</a></li>
-                        <li class=""><a data-toggle="tab" href="#PaymentsHistory" aria-expanded="false"><i class="fa fa-users" aria-hidden="true"></i> '.$payments_val['payments_history'].'</a></li>
+                        <li class="active"><a data-toggle="tab" href="#OutgoingPayments" aria-expanded="false"><i class="fa fa-upload"></i> '.$payments_val['outgoing_payments'].'</a></li>
+                        <li class=""><a data-toggle="tab" href="#IncomePayments" aria-expanded="false"><i class="fa fa-download" aria-hidden="true"></i> '.$payments_val['income_payments'].'</a></li>
+                        <li class=""><a data-toggle="tab" href="#PaymentsHistory" aria-expanded="false"><i class="fa fa-history" aria-hidden="true"></i> '.$payments_val['payments_history'].'</a></li>
                       </ul>
 
                         <div class="tab-content">
@@ -40,132 +40,97 @@ if(!class_exists('SD_Payment'))
                                 
                                 <div class="accordion-style-light no-round">
                                     <div class="accordion-warp">
-                                      <div class="clearfix"></div>
-                                      <div class="panel-group" id="accordion1">
-                                      <div class="panel panel-default">
-                                          <div class="panel-heading">
-                                              <h4 class="panel-title">
-                                                  <a data-toggle="collapse" data-parent="#accordion1" href="#out1" class="collapsed">01. Define Objectives</a>
-                                              </h4>
-                                          </div>
-                                          <div id="out1" class="panel-collapse collapse">
-                                              <div class="panel-body">
-                                                <div class="accordion-content">
-                                                  <p>Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis et interdum libero lacinia vel. Aenean elementum odio ut lorem cursus, eu auctor magna pellentesque.  </p>
-                                                </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="panel panel-default">
-                                          <div class="panel-heading">
-                                              <h4 class="panel-title">
-                                                  <a data-toggle="collapse" data-parent="#accordion1" href="#out2" class="collapsed">02. Develop a Plan</a>
-                                              </h4>
-                                          </div>
-                                          <div id="out2" class="panel-collapse collapse">
-                                              <div class="panel-body">
-                                                  <div class="accordion-content">
-                                                  <p>Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis et interdum libero lacinia vel. Aenean elementum odio ut lorem cursus, eu auctor magna pellentesque.  </p>
-                                                </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="panel panel-default">
-                                          <div class="panel-heading">
-                                              <h4 class="panel-title">
-                                                  <a data-toggle="collapse" data-parent="#accordion1" href="#out3" class="collapsed">03. Implementation</a>
-                                              </h4>
-                                          </div>
-                                          <div id="out3" class="panel-collapse collapse">
-                                              <div class="panel-body">
-                                                  <div class="accordion-content">
-                                                  <p>Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis et interdum libero lacinia vel. Aenean elementum odio ut lorem cursus, eu auctor magna pellentesque.  </p>
-                                                </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="panel panel-default">
-                                          <div class="panel-heading">
-                                              <h4 class="panel-title">
-                                                  <a data-toggle="collapse" data-parent="#accordion1" href="#out4" class="collapsed">04. Monitor Results</a>
-                                              </h4>
-                                          </div>
-                                          <div id="out4" class="panel-collapse collapse">
-                                              <div class="panel-body">
-                                                  <div class="accordion-content">
-                                                  <p>Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis et interdum libero lacinia vel. Aenean elementum odio ut lorem cursus, eu auctor magna pellentesque.  </p>
-                                                </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      </div> <!-- End panel group -->
+                                            <div class="clearfix"></div>
+                                          <div class="panel-group" id="accordion1">';
+                                            $payments = $DB->query("SELECT * FROM `" . $this->payments. "` WHERE `bayer_userid` = %d",$userinfo['userid']) or die(mysql_error());
+                                            $count = $DB->get_num_rows();
+                                            if($count > 0){
+                                                while($payment = $DB->fetch_array($payments)){
+                                                    echo '<div class="panel panel-default">
+                                                              <div class="panel-heading">
+                                                                  <h4 class="panel-title">
+                                                                      <a data-toggle="collapse" data-parent="#accordion1" href="#out_'.$payment['paymentid'].'" class="collapsed">'.$payment['payment_title'].'</a>
+                                                                  </h4>
+                                                              </div>
+                                                              <div id="out_'.$payment['paymentid'].'" class="panel-collapse collapse">
+                                                                      <div class="panel-body">
+                                                                        <div class="accordion-content">
+                                                                          <div class="col-md-10">
+                                                                            <p>'.$payment['payment_description'].'</p>
+                                                                            <p class="timeline">
+                                                                                <h5>Process Status</h5>
+                                                                                <div class="steps">
+                                                                                    <div class="step finish"><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+                                                                                    <div class="step"><i class="fa fa-user-plus" aria-hidden="true"></i></div>
+                                                                                    <div class="step"><i class="fa fa-upload" aria-hidden="true"></i></div>
+                                                                                    <div class="step"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></div>
+                                                                                </div>
+                                                                                <div class="chart-2 chart-home-2" id="chart-2">
+                                                                                    <div class="chart-h-item">
+                                                                                        <div class="progress progress-h">
+                                                                                            <div class="progress-bar progress-bar-success" role="progressbar" data-transitiongoal="25%"></div>
+                                                                                        </div>
+                                                                                        <span  class="percent-h update-h"></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </p>
+                                                                          </div>
+                                                                          <div class="col-md-2 to-do-list">
+                                                                                <h3>'.$payments_val['to_do'].'</h3>';
+                                                                                if($payment['recipient_userid'] == ''){
+                                                                                    echo '<a href="#" class="to-do"><i class="fa fa-user-plus" aria-hidden="true"></i><br>'.$payments_val['invite_recipient'].'</a>';
+                                                                                }
+                                                                                if($payment['status'] == 0){
+                                                                                    echo '<a href="#" class="to-do"><i class="fa fa-check-square-o" aria-hidden="true"></i><br>'.$payments_val['activate'].'</a>';
+                                                                                }
+                                                                    echo '</div>
+                                                                          
+                                                                        </div>
+                                                                      </div>
+                                                              </div>
+                                                        </div>';
+                                                }
+                                            }
+                                            else{
+                                                echo '<div class="col-md-12 payment">'.$payments_val['no_payments_found'].'</div>';
+                                            }
+                                          echo '</div> <!-- End panel group -->
                                     </div>
                                 </div>
                                 
                           </div>
                           <div id="IncomePayments" class="tab-pane fade">
+                                
+                                
                                 <h4> '.$payments_val['income_payments'].'</h4>
                                 <div class="accordion-style-light no-round">
                                     <div class="accordion-warp">
                                       <div class="clearfix"></div>
-                                      <div class="panel-group" id="accordion2">
-                                      <div class="panel panel-default">
-                                          <div class="panel-heading">
-                                              <h4 class="panel-title">
-                                                  <a data-toggle="collapse" data-parent="#accordion2" href="#in1" class="collapsed">01. Define Objectives</a>
-                                              </h4>
-                                          </div>
-                                          <div id="in1" class="panel-collapse collapse">
-                                              <div class="panel-body">
-                                                <div class="accordion-content">
-                                                  <p>Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis et interdum libero lacinia vel. Aenean elementum odio ut lorem cursus, eu auctor magna pellentesque.  </p>
-                                                </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="panel panel-default">
-                                          <div class="panel-heading">
-                                              <h4 class="panel-title">
-                                                  <a data-toggle="collapse" data-parent="#accordion2" href="#in2" class="collapsed">02. Develop a Plan</a>
-                                              </h4>
-                                          </div>
-                                          <div id="in2" class="panel-collapse collapse">
-                                              <div class="panel-body">
-                                                  <div class="accordion-content">
-                                                  <p>Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis et interdum libero lacinia vel. Aenean elementum odio ut lorem cursus, eu auctor magna pellentesque.  </p>
-                                                </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="panel panel-default">
-                                          <div class="panel-heading">
-                                              <h4 class="panel-title">
-                                                  <a data-toggle="collapse" data-parent="#accordion2" href="#in3" class="collapsed">03. Implementation</a>
-                                              </h4>
-                                          </div>
-                                          <div id="in3" class="panel-collapse collapse">
-                                              <div class="panel-body">
-                                                  <div class="accordion-content">
-                                                  <p>Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis et interdum libero lacinia vel. Aenean elementum odio ut lorem cursus, eu auctor magna pellentesque.  </p>
-                                                </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="panel panel-default">
-                                          <div class="panel-heading">
-                                              <h4 class="panel-title">
-                                                  <a data-toggle="collapse" data-parent="#accordion2" href="#in4" class="collapsed">04. Monitor Results</a>
-                                              </h4>
-                                          </div>
-                                          <div id="in4" class="panel-collapse collapse">
-                                              <div class="panel-body">
-                                                  <div class="accordion-content">
-                                                  <p>Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis et interdum libero lacinia vel. Aenean elementum odio ut lorem cursus, eu auctor magna pellentesque.  </p>
-                                                </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      </div> <!-- End panel group -->
+                                      <div class="panel-group" id="accordion2">';
+                                        $payments = $DB->query("SELECT * FROM `" . $this->payments. "` WHERE `recipient_userid` = %d",$userinfo['userid']) or die(mysql_error());
+                                        $count = $DB->get_num_rows();
+                                        if($count > 0){
+                                            while($payment = $DB->fetch_array($payments)){
+                                                echo '<div class="panel panel-default">
+                                                  <div class="panel-heading">
+                                                      <h4 class="panel-title">
+                                                          <a data-toggle="collapse" data-parent="#accordion2" href="#out_'.$payment['paymentid'].'" class="collapsed">'.$payment['payment_title'].'</a>
+                                                      </h4>
+                                                  </div>
+                                                  <div id="out_'.$payment['paymentid'].'" class="panel-collapse collapse">
+                                                      <div class="panel-body">
+                                                        <div class="accordion-content">
+                                                          <p>'.$payment['payment_description'].'</p>
+                                                        </div>
+                                                      </div>
+                                                  </div>
+                                              </div>';
+                                            }
+                                        }
+                                        else{
+                                            echo '<div class="col-md-12 payment">'.$payments_val['no_payments_found'].'</div>';
+                                        }
+                                      echo '</div> <!-- End panel group -->
                                     </div>
                                 </div>
                           </div>
@@ -174,64 +139,31 @@ if(!class_exists('SD_Payment'))
                                 <div class="accordion-style-light no-round">
                                     <div class="accordion-warp">
                                       <div class="clearfix"></div>
-                                      <div class="panel-group" id="accordion3">
-                                      <div class="panel panel-default">
-                                          <div class="panel-heading">
-                                              <h4 class="panel-title">
-                                                  <a data-toggle="collapse" data-parent="#accordion3" href="#his1" class="collapsed">01. Define Objectives</a>
-                                              </h4>
-                                          </div>
-                                          <div id="his1" class="panel-collapse collapse">
-                                              <div class="panel-body">
-                                                <div class="accordion-content">
-                                                  <p>Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis et interdum libero lacinia vel. Aenean elementum odio ut lorem cursus, eu auctor magna pellentesque.  </p>
-                                                </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="panel panel-default">
-                                          <div class="panel-heading">
-                                              <h4 class="panel-title">
-                                                  <a data-toggle="collapse" data-parent="#accordion3" href="#his2" class="collapsed">02. Develop a Plan</a>
-                                              </h4>
-                                          </div>
-                                          <div id="his2" class="panel-collapse collapse">
-                                              <div class="panel-body">
-                                                  <div class="accordion-content">
-                                                  <p>Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis et interdum libero lacinia vel. Aenean elementum odio ut lorem cursus, eu auctor magna pellentesque.  </p>
-                                                </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="panel panel-default">
-                                          <div class="panel-heading">
-                                              <h4 class="panel-title">
-                                                  <a data-toggle="collapse" data-parent="#accordion3" href="#his3" class="collapsed">03. Implementation</a>
-                                              </h4>
-                                          </div>
-                                          <div id="his3" class="panel-collapse collapse">
-                                              <div class="panel-body">
-                                                  <div class="accordion-content">
-                                                  <p>Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis et interdum libero lacinia vel. Aenean elementum odio ut lorem cursus, eu auctor magna pellentesque.  </p>
-                                                </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="panel panel-default">
-                                          <div class="panel-heading">
-                                              <h4 class="panel-title">
-                                                  <a data-toggle="collapse" data-parent="#accordion3" href="#his4" class="collapsed">04. Monitor Results</a>
-                                              </h4>
-                                          </div>
-                                          <div id="his4" class="panel-collapse collapse">
-                                              <div class="panel-body">
-                                                  <div class="accordion-content">
-                                                  <p>Fusce ornare mi vel risus porttitor dignissim. Nunc eget risus at ipsum blandit ornare vel sed velit. Proin gravida arcu nisl, a dignissim mauris placerat id. Vivamus interdum urna at sapien varius elementum. Suspendisse ut mi felis et interdum libero lacinia vel. Aenean elementum odio ut lorem cursus, eu auctor magna pellentesque.  </p>
-                                                </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      </div> <!-- End panel group -->
+                                      <div class="panel-group" id="accordion3">';
+                                            $payments = $DB->query("SELECT * FROM `" . $this->payments. "` WHERE `status` = 9 AND (`recipient_userid` = %d OR `bayer_userid` = %d)",$userinfo['userid'],$userinfo['userid']) or die(mysql_error());
+                                            $count = $DB->get_num_rows();
+                                            if($count > 0){
+                                                while($payment = $DB->fetch_array($payments)){
+                                                    echo '<div class="panel panel-default">
+                                                      <div class="panel-heading">
+                                                          <h4 class="panel-title">
+                                                              <a data-toggle="collapse" data-parent="#accordion3" href="#out_'.$payment['paymentid'].'" class="collapsed">'.$payment['payment_title'].'</a>
+                                                          </h4>
+                                                      </div>
+                                                      <div id="out_'.$payment['paymentid'].'" class="panel-collapse collapse">
+                                                          <div class="panel-body">
+                                                            <div class="accordion-content">
+                                                              <p>'.$payment['payment_description'].'</p>
+                                                            </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>';
+                                                }
+                                            }
+                                            else{
+                                                echo '<div class="col-md-12 payment">'.$payments_val['no_payments_found'].'</div>';
+                                            }
+                                          echo '</div> <!-- End panel group -->
                                     </div>
                                 </div>
                           </div>
