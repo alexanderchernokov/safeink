@@ -13,20 +13,27 @@ if(!class_exists('SD_Payment'))
     {
         public function __construct()
         {
-            global $userinfo;
+            global $userinfo,$payments_val;
             if($this->pluginid = GetPluginIDbyFolder(sd_GetCurrentFolder(__FILE__)))
             {
                 //$this->language = GetLanguage($this->pluginid);
                 //$this->settings = GetPluginSettings($this->pluginid);
                 $this->username = !empty($userinfo['username']);
                 $this->payments = 'sd_payments';
+                $this->module_header = '
+                <div class="row">
+                    <div class="col-md-12" style="text-align: right;">
+                        <a href="#" class="popup_link ot-btn large-btn btn-green-color icon-btn-left" data-popup-open="popup-1" rel="create_payment"><i class="fa fa-plus-circle" aria-hidden="true"></i>' .$payments_val['create_new'].'</a>
+                    </div>
+                </div>
+                ';
             }
         }
 
         function DisplayPayments()
         {
             global $DB, $userinfo,$payments_val;
-
+            echo $this->module_header;
             echo '<div class="finance-tabs-style-2 clearfix">
                       <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#OutgoingPayments" aria-expanded="false"><i class="fa fa-upload"></i> '.$payments_val['outgoing_payments'].'</a></li>
@@ -195,12 +202,21 @@ if(!class_exists('SD_Payment'))
         function UpdateForm(){
 
         }
+        function ModalsBoxes(){
+            echo '<div class="popup" data-popup="popup-1">
+                        <div class="popup-inner">
+                            <div class="popup-inner-content"></div>
+                            <a class="popup-close" data-popup-close="popup-1" href="#">x</a>   
+                        </div>
+                    </div>';
+        }
     }
 }
 
 
 
 $p_payment = new SD_Payment();
+
 switch($_POST['action']){
     case 'update':
         break;
@@ -212,5 +228,6 @@ switch($_POST['action']){
         $p_payment->DisplayPayments();
         break;
 }
+$p_payment->ModalsBoxes();
 unset($p_payment);
 ?>
