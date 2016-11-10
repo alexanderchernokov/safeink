@@ -34,7 +34,7 @@ if($link){
             $id = mysql_insert_id();
             echo 'next::'.$id;
             break;
-        case 'amount':
+        case 'add_amount':
             break;
     }
 }
