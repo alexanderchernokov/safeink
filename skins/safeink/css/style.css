@@ -3329,7 +3329,7 @@ ul.style-list-circle li:hover a {
 /* Progress Bar
 ----------------------------------------------------------*/
 .chart-2 {
-  max-width: 570px;
+  width: 100%;
 }
 .our-commitment {
   overflow: hidden;
@@ -5715,4 +5715,28 @@ ul.language_submenu li a img{
   transform:translate(50%, -50%) rotate(180deg);
   background:rgba(0,0,0,1);
   text-decoration:none;
+}
+#steps_div{
+  max-height: 600px;
+  overflow-y: auto;
+}
+.step_area{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 7px;
+  border-bottom: 1px solid #dddddd;
+}
+.step_area.evened{
+  background-color: #efefef;
+}
+.step_area:after{
+  content:' ';
+  display: table;
+  clear: both;
+}
+.add_step{
+  display: block;
+  text-align: center;
+  font-size: 48px;
+  color:#00abc9;
 }

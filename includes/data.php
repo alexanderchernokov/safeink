@@ -1,4 +1,5 @@
 <?php
+session_start();
 /**
  * Created by PhpStorm.
  * User: alexander.c
@@ -6,17 +7,34 @@
  * Time: 17:40
  */
 
-require_once ('config.php');
-if(mysql_connect($database['server_name'],$database['username'],$database['password'],$database['name'])){
+//require_once ('config.php');
+$link = mysql_connect('localhost','root1','optionsweb1!');
+if($link){
+    mysql_select_db( 'safe' );
     mysql_query("SET NAMES utf8");
 
     switch($_POST['act']){
         case 'new':
-            //if()
-            //mysql_query("INSERT INTO `sd_payments` ()")
-            print_r($_POST);
+            if($_POST['type'] == 1){
+                $f = 'bayer_';
+            }
+            if($_POST['type'] == 2){
+                $f = 'recipient_';
+            }
+
+            mysql_query("INSERT INTO `sd_payments` 
+                                      (
+                                        `payment_title`,`payment_description`,".$f."userid,`status`
+                                      )
+                         VALUES
+                                      (
+                                        '".$_POST['payment_title']."','".$_POST['payment_description']."',".$_POST['u'].",1
+                                      )
+                        ") or die(mysql_error());
+            $id = mysql_insert_id();
+            echo 'next::'.$id;
             break;
-        case 'amounk':
+        case 'amount':
             break;
     }
 }

@@ -203,12 +203,123 @@ if(!class_exists('SD_Payment'))
 
         }
         function ModalsBoxes(){
+            global $DB, $userinfo,$payments_val;
             echo '<div class="popup" data-popup="popup-1">
                         <div class="popup-inner">
-                            <div class="popup-inner-content"></div>
+                            <div>
+                            
+                                <form class="form-contact-3 form-contact-finance" name="payment" id="payment" method="post" action="send_form_email.php">
+                                    <div class="form-group col-sm-12  col-md-12"><h2>'.$payments_val['create_new'].'</h2></div>
+                                    <div class="form-group col-sm-12  col-md-12">
+                                        <select name="type" id="type" class="form-control" required>
+                                            <option value="">'.$payments_val['select_process_type'].'</option>
+                                            <option value="1">'.$payments_val['outgoing_payments_placeholder'].'</option>
+                                            <option value="2">'.$payments_val['income_payments_placeholder'].'</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-sm-12  col-md-12">
+                                        <input type="text" class="form-control" name="payment_title" id="payment_title" placeholder="'.$payments_val['process_name'].'" value="" required>
+                                    </div>
+                                    <div class="form-group col-sm-12 col-md-12">
+                                        <textarea name="payment_description" id="payment_description"  class="form-control" placeholder="'.$payments_val['process_description'].'"></textarea>
+                                    </div>
+                                
+                                    <input type="hidden" name="act" value="new">
+                                    <input type="hidden" name="u" value="'.$userinfo['userid'].'">
+                                    <a href="javascript:;" class="ot-btn large-btn btn-rounded  btn-main-color btn-submit payment" rel="payment">'.$payments_val['save'].'</a>
+                                </form>
+                                <form class="form-contact-3 form-contact-finance" name="payment" id="amount" method="post" action="send_form_email.php" style="display:none">
+                                            <div class="form-group col-sm-12  col-md-12"><h2>Add Amount</h2></div>
+                                            <div class="col-sm-12  col-md-9">
+                                                <div id="steps_div">
+                                                    <div class="step_area">
+                                                        <div class="form-group col-sm-12  col-md-12">
+                                                            <input type="text" class="form-control" name="amount_1" id="amount_1" placeholder="'.$payments_val['process_name'].'" value="" required>
+                                                        </div>
+                                                        <div class="form-group col-sm-12 col-md-12">
+                                                            <textarea name="step_description_1" id="step_description_1"  class="form-control" placeholder="'.$payments_val['process_description'].'"></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <input type="hidden" name="act" value="add_amount">
+                                                <input type="hidden" name="payment_id"  id="payment_id" value="'.$userinfo['userid'].'">
+                                                <input type="hidden" name="num"  id="num" value="1">
+                                                <a href="javascript:;" class="ot-btn large-btn btn-rounded  btn-main-color btn-submit payment" rel="amount">'.$payments_val['save'].'</a>
+                                            </div>
+                                             <div class="col-sm-12  col-md-3">
+                                                <h4>Multistep payment?<br>
+                                                Add more steps</h4>
+                                                <a class="add_step" href="javascript:;">
+                                                    <i class="fa fa-plus-square" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+                                </form>
+                                
+                                ';
+                                ?>
+                                <script type="text/javascript">
+                                    function addStep(num,amount,step_description,step){
+                                        var cl = '';
+                                        var isEven = function(someNumber) {
+                                            return (someNumber % 2 == 0) ? true : false;
+                                        };
+                                        if(isEven(num)){
+                                            cl = 'evened';
+                                        }
+                                        else{
+                                            cl = '';
+                                        }
+                                        var st = '<div class="step_area '+cl+'"><h4>'+step+num+'</h4><div class="form-group col-sm-12  col-md-12"><input type="text" class="form-control" name="amount_'+num+'" id="amount_'+num+'" placeholder="'+amount+'" value="" required></div><div class="form-group col-sm-12 col-md-12"><textarea name="step_description'+num+'" id="step_description'+num+'"  class="form-control" placeholder="'+step_description+'"></textarea></div></div>';
+                                        return st;
+                                    }
+                                    $(document).on("click",".add_step",function(){
+                                        var new_num = Number($("#num").val())+1;
+                                        $("#steps_div").append(addStep(new_num,'asdf','asdfasdf','Step '));
+                                        $("#num").val(new_num);
+                                    });
+                                    $(document).on("click",".payment",function(e){
+                                        e.preventDefault;
+
+
+                                        //var myForm = $(\'#payment\')
+                                        var myForm = $('#'+$(this).attr("rel"));
+                                        $(":input[required]").each(function () {
+
+                                            if (myForm[0].checkValidity())
+                                            {
+                                                var form_data = $(myForm).serialize();
+                                                $.ajax({
+                                                    type: 'POST',
+                                                    url: 'includes/data.php',
+                                                    enctype: 'multipart/form-data',
+                                                    data: form_data,
+                                                    success:function(msg) {
+                                                        var vars =  msg.split("::");
+                                                        if(vars[0] == 'next'){
+                                                            $("#payment_id").val(vars[1]);
+                                                            $("#payment").fadeOut("fast");
+                                                            $("#amount").fadeIn("fast");
+                                                        }
+                                                        return false;
+                                                    },
+                                                    error:function(){
+                                                        alert('Whoops! This didn\'t work . Please contact us . ');
+                                                    }
+                                                });
+                                                return false;
+                                            }
+                                            else{
+                                                alert('error_val');
+                                            }
+                                        });
+                                    })
+
+                                </script>
+                                </div>
                             <a class="popup-close" data-popup-close="popup-1" href="#">x</a>   
                         </div>
-                    </div>';
+                    </div>
+<?php
         }
     }
 }
