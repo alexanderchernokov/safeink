@@ -7,6 +7,7 @@
  */
 if(!defined('IN_PRGM')) return false;
 include_once ('includes/custom_languages/'.$user_language.'/payments.php');
+$refreshpage = '/'.$user_language.'/payments/';
 if(!class_exists('SD_Payment'))
 {
     class SD_Payment
@@ -63,6 +64,7 @@ if(!class_exists('SD_Payment'))
                                                                       <div class="panel-body">
                                                                         <div class="accordion-content">
                                                                           <div class="col-md-10">
+                                                                            <p><h4><a href="payments/edit/'.$payment['paymentid'].'">'.$payment['payment_title'].' <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></h4></p>
                                                                             <p>'.$payment['payment_description'].'</p>
                                                                             <p class="timeline">
                                                                                 <h5>Process Status</h5>
@@ -83,15 +85,10 @@ if(!class_exists('SD_Payment'))
                                                                             </p>
                                                                           </div>
                                                                           <div class="col-md-2 to-do-list">
-                                                                                <h3>'.$payments_val['to_do'].'</h3>';
-                                                                                if($payment['recipient_userid'] == ''){
-                                                                                    echo '<a href="#" class="to-do"><i class="fa fa-user-plus" aria-hidden="true"></i><br>'.$payments_val['invite_recipient'].'</a>';
-                                                                                }
-                                                                                if($payment['status'] == 0){
-                                                                                    echo '<a href="#" class="to-do"><i class="fa fa-check-square-o" aria-hidden="true"></i><br>'.$payments_val['activate'].'</a>';
-                                                                                }
-                                                                    echo '</div>
-                                                                          
+                                                                                <h3>'.$payments_val['to_do'].'</h3>
+                                                                                <a href="#" class="ot-btn  small-btn btn-main-color"> Edit</a>
+                                                                                <a href="#" class="ot-btn  small-btn btn-red-color"><i class="fa fa-trash-o" aria-hidden="true"></i> Cancel</a>
+                                                                          </div>
                                                                         </div>
                                                                       </div>
                                                               </div>
@@ -177,38 +174,182 @@ if(!class_exists('SD_Payment'))
                          
                         </div>
             </div>';
-
-
-
-
-
-
-            /*echo '<div class="row">';
-                echo '<h3>Outgoing Payments</h3>';
-                $payments = $DB->query("SELECT * FROM `" . $this->payments. "` WHERE `userid` = %d",$userinfo['userid']) or die(mysql_error());
-                while($payment = $DB->fetch_array($payments)){
-                    echo '<div class="col-md-12 payment">'.$payment['payment_title'].'</div>';
-                }
-            echo '</div>';
-            echo '<div class="row">';
-                echo '<h3>Income Payments</h3>';
-                $payments = $DB->query("SELECT * FROM `" . $this->payments. "` WHERE `assigned_user`=%d",$userinfo['userid']);
-                while($payment = $DB->fetch_array($payments)){
-                    echo '<div class="col-md-12 payment">'.$payment['payment_title'].'</div>';
-                }
-            echo '</div>';*/
-
         }
-        function UpdateForm(){
+        function UpdateForm()
+        {
+            global $DB, $userinfo,$payments_val;
+            echo $this->module_header;
+            echo '<div class="finance-tabs-style-2 clearfix">
+                      <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#Payments" aria-expanded="false"><i class="fa fa-credit-card" aria-hidden="true"></i> '.$payments_val['payments'].'</a></li>
+                        <li class=""><a data-toggle="tab" href="#General" aria-expanded="false"><i class="fa fa-info" aria-hidden="true"></i> '.$payments_val['general_info'].'</a></li>
+                      </ul>
 
+                        <div class="tab-content">
+                          <div id="Payments" class="tab-pane fade active in">
+                                <h4> '.$payments_val['outgoing_payments'].'</h4>
+                                
+                                <div class="accordion-style-light no-round">
+                                    <div class="accordion-warp">
+                                            <div class="clearfix"></div>
+                                            <div class="panel-group" id="accordion1">';
+                                            $payments = $DB->query("SELECT * FROM `" . $this->payments. "` WHERE `bayer_userid` = %d",$userinfo['userid']) or die(mysql_error());
+                                            $count = $DB->get_num_rows();
+                                            if($count > 0){
+                                                while($payment = $DB->fetch_array($payments)){
+                                                    echo '<div class="panel panel-default">
+                                                              <div class="panel-heading">
+                                                                  <h4 class="panel-title">
+                                                                      <a data-toggle="collapse" data-parent="#accordion1" href="#out_'.$payment['paymentid'].'" class="collapsed">'.$payment['payment_title'].'</a>
+                                                                  </h4>
+                                                              </div>
+                                                              <div id="out_'.$payment['paymentid'].'" class="panel-collapse collapse">
+                                                                      <div class="panel-body">
+                                                                        <div class="accordion-content">
+                                                                          <div class="col-md-10">
+                                                                            <p><h4><a href="payments/edit/'.$payment['paymentid'].'">'.$payment['payment_title'].' <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></h4></p>
+                                                                            <p>'.$payment['payment_description'].'</p>
+                                                                            <p class="timeline">
+                                                                                <h5>Process Status</h5>
+                                                                                <div class="steps">
+                                                                                    <div class="step finish"><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+                                                                                    <div class="step"><i class="fa fa-user-plus" aria-hidden="true"></i></div>
+                                                                                    <div class="step"><i class="fa fa-upload" aria-hidden="true"></i></div>
+                                                                                    <div class="step"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></div>
+                                                                                </div>
+                                                                                <div class="chart-2 chart-home-2" id="chart-2">
+                                                                                    <div class="chart-h-item">
+                                                                                        <div class="progress progress-h">
+                                                                                            <div class="progress-bar progress-bar-success" role="progressbar" data-transitiongoal="25%"></div>
+                                                                                        </div>
+                                                                                        <span  class="percent-h update-h"></span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </p>
+                                                                          </div>
+                                                                          <div class="col-md-2 to-do-list">
+                                                                                <h3>'.$payments_val['to_do'].'</h3>
+                                                                                <a href="#" class="ot-btn  small-btn btn-main-color"> Edit</a>
+                                                                                <a href="#" class="ot-btn  small-btn btn-red-color"><i class="fa fa-trash-o" aria-hidden="true"></i> Cancel</a>
+                                                                          </div>
+                                                                        </div>
+                                                                      </div>
+                                                              </div>
+                                                        </div>';
+                }
+            }
+            else{
+                echo '<div class="col-md-12 payment">'.$payments_val['no_payments_found'].'</div>';
+            }
+            echo '</div> <!-- End panel group -->
+                                    </div>
+                                </div>
+                                
+                          </div>
+                          <div id="General" class="tab-pane fade">
+                                
+                                
+                                <h4> '.$payments_val['income_payments'].'</h4>
+                                <div class="accordion-style-light no-round">
+                                    <div class="accordion-warp">
+                                      <div class="clearfix"></div>
+                                      <div class="panel-group" id="accordion2">';
+            $payments = $DB->query("SELECT * FROM `" . $this->payments. "` WHERE `recipient_userid` = %d",$userinfo['userid']) or die(mysql_error());
+            $count = $DB->get_num_rows();
+            if($count > 0){
+                while($payment = $DB->fetch_array($payments)){
+                    echo '<div class="panel panel-default">
+                                                  <div class="panel-heading">
+                                                      <h4 class="panel-title">
+                                                          <a data-toggle="collapse" data-parent="#accordion2" href="#out_'.$payment['paymentid'].'" class="collapsed">'.$payment['payment_title'].'</a>
+                                                      </h4>
+                                                  </div>
+                                                  <div id="out_'.$payment['paymentid'].'" class="panel-collapse collapse">
+                                                      <div class="panel-body">
+                                                        <div class="accordion-content">
+                                                          <p>'.$payment['payment_description'].'</p>
+                                                        </div>
+                                                      </div>
+                                                  </div>
+                                              </div>';
+                }
+            }
+            else{
+                echo '<div class="col-md-12 payment">'.$payments_val['no_payments_found'].'</div>';
+            }
+            echo '</div> <!-- End panel group -->
+                                    </div>
+                                </div>
+                          </div>
+                          <div id="PaymentsHistory" class="tab-pane fade">
+                                <h4> '.$payments_val['payments_history'].'</h4>
+                                <div class="accordion-style-light no-round">
+                                    <div class="accordion-warp">
+                                      <div class="clearfix"></div>
+                                      <div class="panel-group" id="accordion3">';
+            $payments = $DB->query("SELECT * FROM `" . $this->payments. "` WHERE `status` = 9 AND (`recipient_userid` = %d OR `bayer_userid` = %d)",$userinfo['userid'],$userinfo['userid']) or die(mysql_error());
+            $count = $DB->get_num_rows();
+            if($count > 0){
+                while($payment = $DB->fetch_array($payments)){
+                    echo '<div class="panel panel-default">
+                                                      <div class="panel-heading">
+                                                          <h4 class="panel-title">
+                                                              <a data-toggle="collapse" data-parent="#accordion3" href="#out_'.$payment['paymentid'].'" class="collapsed">'.$payment['payment_title'].'</a>
+                                                          </h4>
+                                                      </div>
+                                                      <div id="out_'.$payment['paymentid'].'" class="panel-collapse collapse">
+                                                          <div class="panel-body">
+                                                            <div class="accordion-content">
+                                                              <p>'.$payment['payment_description'].'</p>
+                                                            </div>
+                                                          </div>
+                                                      </div>
+                                                  </div>';
+                }
+            }
+            else{
+                echo '<div class="col-md-12 payment">'.$payments_val['no_payments_found'].'</div>';
+            }
+            echo '</div> <!-- End panel group -->
+                                    </div>
+                                </div>
+                          </div>
+                         
+                        </div>
+            </div>';
+        }
+        function CreateForm(){
+            global $DB, $userinfo, $refreshpage , $payments_val;
+            $title         = htmlentities($_POST['payment_title']);
+            $description      = htmlentities($_POST['payment_description']);
+            $type        = (int)$_POST['type'];
+            if($type == 1){
+                $bayer = $userinfo['userid'];
+                $recipient = 0;
+            }
+            else{
+                $bayer = 0;
+                $recipient = $userinfo['userid'];
+            }
+            $DB->query("INSERT INTO ".$this->payments."
+                        (`bayer_userid`,`payment_title`,`payment_description`,`recipient_userid`,`status`,`is_own`)
+                        VALUES
+                        (%d,'%s','%s',%d,%d,%d)
+                        ",$bayer,$title,$description,$recipient,1,$userinfo['userid']);
+            $id = $DB->insert_id();
+            $refreshpage = $refreshpage.'edit/'.$id;
+            RedirectPage($refreshpage, $payments_val['created_new']);
+        }
+        function ErrorMessage(){
+            echo 'Illegal operation!';
         }
         function ModalsBoxes(){
-            global $DB, $userinfo,$payments_val;
+            global $DB, $userinfo,$payments_val,$user_language;
             echo '<div class="popup" data-popup="popup-1">
                         <div class="popup-inner">
                             <div>
                             
-                                <form class="form-contact-3 form-contact-finance" name="payment" id="payment" method="post" action="send_form_email.php">
+                                <form class="form-contact-3 form-contact-finance" name="payment" id="payment" method="post" action="/'.$user_language.'/payments/add">
                                     <div class="form-group col-sm-12  col-md-12"><h2>'.$payments_val['create_new'].'</h2></div>
                                     <div class="form-group col-sm-12  col-md-12">
                                         <select name="type" id="type" class="form-control" required>
@@ -223,99 +364,12 @@ if(!class_exists('SD_Payment'))
                                     <div class="form-group col-sm-12 col-md-12">
                                         <textarea name="payment_description" id="payment_description"  class="form-control" placeholder="'.$payments_val['process_description'].'"></textarea>
                                     </div>
-                                
-                                    <input type="hidden" name="act" value="new">
-                                    <input type="hidden" name="u" value="'.$userinfo['userid'].'">
-                                    <a href="javascript:;" class="ot-btn large-btn btn-rounded  btn-main-color btn-submit payment" rel="payment">'.$payments_val['save'].'</a>
+                                    <button type="submit" class="ot-btn large-btn btn-rounded  btn-main-color btn-submit">'.$payments_val['save'].'</button>
                                 </form>
-                                <form class="form-contact-3 form-contact-finance" name="payment" id="amount" method="post" action="send_form_email.php" style="display:none">
-                                            <div class="form-group col-sm-12  col-md-12"><h2>Add Amount</h2></div>
-                                            <div class="col-sm-12  col-md-9">
-                                                <div id="steps_div">
-                                                    <div class="step_area">
-                                                        <div class="form-group col-sm-12  col-md-12">
-                                                            <input type="text" class="form-control" name="amount_1" id="amount_1" placeholder="'.$payments_val['process_name'].'" value="" required>
-                                                        </div>
-                                                        <div class="form-group col-sm-12 col-md-12">
-                                                            <textarea name="step_description_1" id="step_description_1"  class="form-control" placeholder="'.$payments_val['process_description'].'"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <input type="hidden" name="act" value="add_amount">
-                                                <input type="hidden" name="payment_id"  id="payment_id" value="'.$userinfo['userid'].'">
-                                                <input type="hidden" name="num"  id="num" value="1">
-                                                <a href="javascript:;" class="ot-btn large-btn btn-rounded  btn-main-color btn-submit payment" rel="amount">'.$payments_val['save'].'</a>
-                                            </div>
-                                             <div class="col-sm-12  col-md-3">
-                                                <h4>Multistep payment?<br>
-                                                Add more steps</h4>
-                                                <a class="add_step" href="javascript:;">
-                                                    <i class="fa fa-plus-square" aria-hidden="true"></i>
-                                                </a>
-                                            </div>
-                                </form>
-                                
                                 ';
                                 ?>
-                                <script type="text/javascript">
-                                    function addStep(num,amount,step_description,step){
-                                        var cl = '';
-                                        var isEven = function(someNumber) {
-                                            return (someNumber % 2 == 0) ? true : false;
-                                        };
-                                        if(isEven(num)){
-                                            cl = 'evened';
-                                        }
-                                        else{
-                                            cl = '';
-                                        }
-                                        var st = '<div class="step_area '+cl+'"><h4>'+step+num+'</h4><div class="form-group col-sm-12  col-md-12"><input type="text" class="form-control" name="amount_'+num+'" id="amount_'+num+'" placeholder="'+amount+'" value="" required></div><div class="form-group col-sm-12 col-md-12"><textarea name="step_description'+num+'" id="step_description'+num+'"  class="form-control" placeholder="'+step_description+'"></textarea></div></div>';
-                                        return st;
-                                    }
-                                    $(document).on("click",".add_step",function(){
-                                        var new_num = Number($("#num").val())+1;
-                                        $("#steps_div").append(addStep(new_num,'asdf','asdfasdf','Step '));
-                                        $("#num").val(new_num);
-                                    });
-                                    $(document).on("click",".payment",function(e){
-                                        e.preventDefault;
 
-
-                                        //var myForm = $(\'#payment\')
-                                        var myForm = $('#'+$(this).attr("rel"));
-                                        $(":input[required]").each(function () {
-
-                                            if (myForm[0].checkValidity())
-                                            {
-                                                var form_data = $(myForm).serialize();
-                                                $.ajax({
-                                                    type: 'POST',
-                                                    url: 'includes/data.php',
-                                                    enctype: 'multipart/form-data',
-                                                    data: form_data,
-                                                    success:function(msg) {
-                                                        var vars =  msg.split("::");
-                                                        if(vars[0] == 'next'){
-                                                            $("#payment_id").val(vars[1]);
-                                                            $("#payment").fadeOut("fast");
-                                                            $("#amount").fadeIn("fast");
-                                                        }
-                                                        return false;
-                                                    },
-                                                    error:function(){
-                                                        alert('Whoops! This didn\'t work . Please contact us . ');
-                                                    }
-                                                });
-                                                return false;
-                                            }
-                                            else{
-                                                alert('error_val');
-                                            }
-                                        });
-                                    })
-
-                                </script>
-                                </div>
+                            </div>
                             <a class="popup-close" data-popup-close="popup-1" href="#">x</a>   
                         </div>
                     </div>
@@ -324,16 +378,32 @@ if(!class_exists('SD_Payment'))
     }
 }
 
+//$seotitle         = GetVar('seo_title', '', 'string');
+//$description      = GetVar('description', '', 'html', true, false);
+//$del_image        = GetVar('delete_image', false, 'whole_number', true, false);
 
-
+//$actions_arr = explode("/",$_SERVER['REQUEST_URI']);
 $p_payment = new SD_Payment();
-
-switch($_POST['action']){
+$list = array('add','update','edit','delete','');
+if(in_array($uri_arr[3],$list)){
+    $switch = $uri_arr[3];
+}
+else{
+    $switch = 'error';
+}
+switch($switch){
     case 'update':
         break;
     case 'edit':
+        $p_payment->UpdateForm();
         break;
     case 'delete':
+        break;
+    case 'add':
+        $p_payment->CreateForm();
+        break;
+    case 'error':
+        $p_payment->ErrorMessage();
         break;
     default:
         $p_payment->DisplayPayments();

@@ -20,4 +20,5 @@ $payments_val = array(
     'income_payments_placeholder'=>'Save',
     'process_name'=>'Process Name',
     'process_description'=>'Process Description',
+    'created_new'=>'New Payment Process has been created successfully! Please wait for redirect.',
 );

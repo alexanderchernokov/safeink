@@ -1,6 +1,18 @@
 <?php
 if(!defined('IN_PRGM')) exit();
 
+
+function RedirectPage($new_page, $message = 'Settings Updated', $delay_in_seconds = 2, $IsError=false)
+{
+  $message .= '<br /><br /><a class="btn btn-sm btn-info" href="' . $new_page . '" onclick="javascript:if(typeof sd_timerID !== \'undefined\') clearTimeout(sd_timerID);">Click to redirect</a>';
+  //$message .= '<br /><br /><a class="btn btn-sm btn-info" href="' . $new_page . '" onclick="javascript:if(typeof sd_timerID !== \'undefined\') clearTimeout(sd_timerID);">' .AdminPhrase('common_click_to_redirect') . '</a>';
+  DisplayMessage($message, $IsError);
+  AddTimeoutJS($delay_in_seconds, $new_page);
+} //RedirectPage
+
+
+
+
 /*
 LayoutGetImage()
 This function is not to be used directly, but by adding to layout like:
@@ -8,7 +20,6 @@ This function is not to be used directly, but by adding to layout like:
 Then, on pageload, "CheckLayoutReplacements()" will search for a function which
 is prefixed with "Layout" and the keyword, like "LayoutGetImage".
 */
-
 function LayoutGetImage($params=null) // must return string
 {
   global $DB, $sdurl, $userinfo, $plugin_names, $plugin_folder_to_id_arr;

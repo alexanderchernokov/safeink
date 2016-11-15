@@ -266,12 +266,12 @@ function ResizeEditor() {
   if($(ed_id).length) {
     topH = editor_top.outerHeight();
   }
-  var bottomH   = Math.max(30, editor_bottom.outerHeight());
+  //var bottomH   = Math.max(30, editor_bottom.outerHeight());
 
   if(structure === "menu") {
     var menutbl = jQuery("div#menu-content table:first");
     newh = menutbl.outerHeight(true) + menutbl.offset().top;
-    newh = newh + topH + bottomH;
+    newh = newh + topH ;
     if(newh < minheight){ newh = minheight; }
     var cssOptions = { height: newh +"px", "maxHeight": newh +"px", "minHeight": newh +"px" };
     jQuery("div.content").css(cssOptions);
@@ -282,9 +282,9 @@ function ResizeEditor() {
 
   if((!skins_options.fallback && !editor) || !skineditor.length) return;
   var err_on = (jQuery("#error_message").css("display")=="block");
-  var newh = winheight - editor_top.offset().top - bottomH;
+  var newh = winheight - editor_top.offset().top;
   if(newh < minheight){ newh = minheight; }
-  if(err_on) { newh = newh + bottomH; }
+  if(err_on) { newh = newh ; }
 
   var cssOptions = { height: newh +"px", "maxHeight": newh +"px", "minHeight": newh +"px" };
   jQuery("div.content").css(cssOptions);
@@ -294,7 +294,7 @@ function ResizeEditor() {
   skinTable.css(cssOptions);
   jQuery("#iframe-content").css(cssOptions);
 
-  newh = Math.round(newh - bottomH - topH - 20);
+  newh = Math.round(newh - topH - 20);
   if(err_on) { newh = newh - 30; }
   cssOptions = { height: newh+"px", "maxHeight": newh+"px", "minHeight": newh+"px" };
   skineditor.css(cssOptions);

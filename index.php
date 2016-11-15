@@ -4,7 +4,8 @@
 // ############################################################################
 //TODO: check for faster 404 upon redirect rule of a missing image file
 /* redirect to the default page - english version */
-
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 $uri_arr = (explode("/",$_SERVER['REQUEST_URI']));
 $langs_arr = array('en','fr','de','il','ru');
 if(!isset($uri_arr[1]) OR $uri_arr[1] == ''){
